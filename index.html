@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!--
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap" rel="stylesheet">-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    <title>NeuroScan</title>
+    <link rel="stylesheet" href="index.css"/>
+    <link rel="icon" href="logo1.png" type="image/x-icon"/>
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+    
+  </head>
+  <body> 
+    <!-- Navigation Bar -->
+<!-- Navigation Bar -->
+<div id="particles-js"></div> <!-- Keep the particles animation -->
+  <nav class="navbar">
+    <div class="nav-left">
+      <!--<h3 class="site-title">NeuroScan</h3>-->
+      <ul>  
+        <li><a href="index.html" style="color: rgb(106, 106, 224);">NeuroScan</a></li>
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="tumor.html">Brain Tumor Scan</a></li>
+        <li><a href="breastcancer.html">Breast Cancer Scan</a></li>
+        <li><a href="lungcancer.html">Lung Cancer Scan</a></li>
+      </ul>
+    </div>
+      <ul>
+        <li><a href="index.html"><img style="padding-right: 10%;" src="logo1.png" alt="LifeSync Logo" class="nav-logo"/></a></li>
+      </ul>
+  </nav>
+
+    <!-- Main Content -->
+    <main>
+         <img src="glowCrop3.gif" width=100%; class="spinning_brain"/>
+          <div class="title_text">
+            <h1 style="text-align: center; font-weight: bold; font-family: 'Arial'; font-size: 4.9em; margin-top: 10%; color: rgb(106, 106, 224);">NeuroScan</h1>
+            <h2 style="font-family: 'Arial', sans-serif; font-size: 3em ;font-weight: lighter; color: black;">
+              Smarter scans. Faster diagnoses. <span style="color: rgb(0, 0, 0);">Longer lives.</span>
+            </h2>
+            <button class="learn-more"><a href="#descriptions">Learn More</a></button>
+          </div>
+          
+     <!--DESCRIPTIONS-->
+          <div id="descriptions" style="margin-top: 3%; margin-bottom:3%;"></div>
+          <h1 class="our-models-title">Our AI Models</h1>
+          <!--<div style="margin-bottom:40%;"></div>-->
+
+          <div class="descriptions">
+            <div class="brain_tumor">
+              <button class="btn btn-moving-gradient btn-moving-gradient--orange"><a href="tumor.html"> Tumor Scan</a></button>
+              <h4><strong>Brain tumors</strong> are abnormal growths of cells in the brain that can be 
+                either harmless or cancerous. They can lead 
+                to serious health complications, such as increased intracranial pressure, 
+                seizures, neurological issues, and can be fatal if left untreated 
+                depending on their size, location, and type.</h4>
+            </div> 
+
+            <div class="breast_cancer">
+              
+              <button class="btn btn-moving-gradient btn-moving-gradient--pink"><a href="breastcancer.html"> Breast Scan </a> </button>
+            <h4>
+              <strong>Breast cancer</strong> is a type of cancer that begins in the cells of the breast, 
+              often presenting as a lump or change in breast tissue. 
+              It can spread to other parts of the body if not detected early, 
+              leading to serious health complications, but with early detection and 
+              treatment, the prognosis is often more favorable.
+            </h4>
+
+          </div> 
+
+            <div class="lung_cancer">
+              <button class="btn btn-moving-gradient btn-moving-gradient--blue"> <a href="lungcancer.html">Lung Scan</a> </button>
+              <h4><strong>Lung cancer</strong> is a type of cancer that begins in the lungs, 
+                often caused by smoking or exposure to harmful substances. 
+                It can lead to symptoms like persistent cough, difficulty breathing, 
+                chest pain, and fatigue, and can spread to other parts of the body. 
+                This can make it a potentially life-threatening disease if not diagnosed and treated early.</h4>
+                
+
+            </div> 
+
+            
+            
+          </div> 
+          <br></br>
+    </main>
+    
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0"></script>
+    <script src="index.js"></script>
+  </body>
+</html>

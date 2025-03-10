@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    <title>NeuroScan AI</title>
+    <link rel="stylesheet" href="tumor.css"/>
+    <link rel="icon" href="logo1.png" type="image/x-icon"/>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@0.8/dist/teachablemachine-image.min.js"></script>
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+  </head>
+  <body> 
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+      <div class="nav-left">
+        <!--<h3 class="site-title">NeuroScan</h3>-->
+        <ul> 
+          <li><a href="index.html" style="color: rgb(106, 106, 224);">NeuroScan</a></li> 
+          <li><a href="index.html">Home</a></li>
+          <li><a href="tumor.html" class="active">Brain Tumor Scan</a></li>
+          <li><a href="breastcancer.html">Breast Cancer Scan</a></li>
+          <li><a href="lungcancer.html">Lung Cancer Scan</a></li>
+        </ul>
+      </div>
+      <img style="padding-right: 10%;" src="logo1.png" alt="LifeSync Logo" class="nav-logo"/>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+      <!-- Two-column layout -->
+      <div class="two-column">
+        <!-- Left Column -->
+        <div class="left-content">
+            <br></br> 
+            <h1 class="tumor-scanner-title">Brain Tumor Scanner</h1>
+            <h1 style = "font-size:2em">More than an Scanner. <strong>Empowering</strong> your <span class="highlight-green">health.</span></h1>
+            <p>
+                Since creating AI Scanning, NeuroScan incorporates the latest verified research to detect tumors more effectively.
+            </p>
+            <a href="index.html" class="home-button">Go Back to Home Page</a>
+        </div>
+
+        <!-- Right Column -->
+        <div class="right-content">
+            <div class="button-box">
+              <div id="upload-container">
+                <label for="imageUpload" class="custom-upload">Click to Upload File</label>
+                <input type="file" id="imageUpload" accept="image/*" hidden />
+              </div>
+          
+              <div id="imageDisplay" class="image-display">Your Uploaded Image</div>
+          
+              <button id="scanButton">Scan Image</button>
+          
+              <div id="results-container" style="display: none;">
+                <h2>Your Results have Arrived</h2>
+                <div id="result"></div>
+            </div>
+            </div>
+          </div>
+          
+      </div>
+    </main>
+
+    <script src="tumor.js"></script>
+  </body>
+</html>

@@ -1,0 +1,373 @@
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+/* Navigation Bar */
+.navbar {
+  display: flex;
+  justify-content: space-between; /* Space items far left and far right */
+  align-items: center;
+  background-color: #ffffff;
+  padding: 1.2% 3%;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0 ;
+  z-index: 1000;
+}
+
+/* Left side of the nav (title + menu) */
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+
+.site-title {
+  font-family: 'Poppins', sans-serif;
+  font-weight: bold;
+  color: rgb(121, 121, 255);
+
+  margin: 0; 
+}
+
+/* Nav Bar */
+.navbar ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+
+.navbar ul li {
+  margin: 0 20px;
+}
+
+.navbar ul li a {
+  text-decoration: none;
+  font-weight: 600;
+  color: #333;
+  font-size: 18px;
+  border-bottom: 2px solid transparent; 
+  transition: 0.3s ease-in-out;
+  border-color: white;
+  display: inline-block;
+  
+}
+
+.navbar ul li a:hover {
+  color: black;
+  transform: scale(1.03);
+  transition: color 0.3s ease-in-out, transform 0.2s ease-in-out;
+  display: inline-block;
+  border-bottom: 2px solid transparent;
+  border-color: black;
+}
+
+/* Logo on the right */
+.nav-logo {
+  height: 60px;   /* Reasonable height */
+  width: auto;    /* Maintain aspect ratio */
+}
+
+.navbar ul li a.active {
+  border-bottom: 2px solid black;
+  transform: scale(1.03);
+}
+/* Button Styles (if any) */
+button {
+  background-color: #007bff;
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+
+button:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+}
+
+button:active {
+  transform: scale(0.95);
+}
+
+/* Main Content */
+main {
+  padding: 100px 20px 50px; /* account for fixed nav at top */
+}
+
+h1 {
+  color: #222;
+  font-size: 42px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+p {
+  font-size: 18px;
+  color: #555;
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .navbar {
+      flex-direction: column;
+      padding: 15px 20px;
+  }
+
+  .nav-left {
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 10px;
+  }
+
+  .navbar ul {
+      flex-direction: column;
+      text-align: center;
+  }
+
+  .navbar ul li {
+      margin: 10px 0;
+  }
+}
+/* Hamburger Menu Button */
+.menu-button {
+  background: none;
+  border: none;
+  color: #333;
+  cursor: pointer;
+  display: none; /* Hidden by default */
+}
+
+/* Default Navbar */
+.nav-menu {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+
+.nav-menu li {
+  margin: 0 20px;
+}
+
+.nav-menu a {
+  text-decoration: none;
+  font-weight: 600;
+  color: #333;
+  font-size: 18px;
+  transition: color 0.3s ease-in-out, transform 0.2s ease-in-out;
+  display: inline-block;
+}
+
+.nav-menu a:hover {
+  color: #007bff;
+  transform: scale(1.1);
+}
+
+
+
+/* Responsive Navbar */
+@media (max-width: 768px) {
+  .menu-button {
+      display: block; /* Show button on small screens */
+  }
+
+  .nav-menu {
+      display: none; /* Hide menu initially */
+      flex-direction: column;
+      background-color: white;
+      position: absolute;
+      top: 60px;
+      left: 0;
+      width: 100%;
+      text-align: center;
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+      padding: 10px 0;
+  }
+
+  .nav-menu.open {
+      display: flex; /* Show menu when open */
+  }
+
+  .nav-menu li {
+      margin: 10px 0;
+  }
+}
+.custom-upload {
+  display: inline-block;
+  padding: 20px;
+  border: 2px dashed #007bff;
+  cursor: pointer;
+  margin-top: 20px;
+  width: 355px;
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+  color: #007bff;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.custom-upload:hover {
+  transform: scale(1.05);  /* Scale up slightly */
+  background-color: #e6f7ff; /* Light blue background on hover */
+}
+
+/* Enlarge the box */
+.image-display {
+  border: 2px dashed #ccc;
+  width: 400px;    /* Increased width */
+  height: 300px;   /* Increased height */
+  line-height: 250px;
+  text-align: center;
+  margin: 20px auto;
+  font-family: 'Poppins', sans-serif;
+  color: #888;
+}
+#scanButton {
+  display: block; /* Always visible */
+  width: 400px; /* Match the width of .image-display */
+  max-width: 100%; /* Ensures responsiveness */
+  margin: 20px auto; /* Centered */
+  padding: 14px 0; /* Slightly taller button */
+  font-size: 18px;
+  font-weight: bold;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+  text-align: center;
+}
+
+#scanButton:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+}
+
+#scanButton:active {
+  transform: scale(0.95);
+}
+/* Two-column container */
+.two-column {
+display: flex;
+flex-wrap: wrap;       /* Allows wrapping on smaller screens */
+justify-content: space-between;
+align-items: flex-start;
+margin-top: 5px;     /* Push content below the fixed navbar */
+padding: 0 10%;        /* Left/Right padding for spacing */
+}
+
+/* Left and Right column basic styling */
+.left-content, 
+.right-content {
+flex: 1;              /* Each column can expand/shrink equally */
+min-width: 300px;     /* Ensure columns don’t get too narrow */
+margin: 20px;
+}
+
+/* Left column headings */
+.left-content h1 {
+font-size: 2.6em;       /* Adjust as desired */
+margin-bottom: 20px;
+text-align: left;
+}
+.highlight-green {
+  color: #38966D; /* Bright green */
+  font-weight: bold;
+}
+/* Left column paragraph */
+.left-content p {
+font-size: 1.15em;     /* Adjust as desired */
+line-height: 1.6;
+max-width: 600px;
+text-align: left;
+}
+
+/* On smaller screens, stack columns */
+@media (max-width: 768px) {
+.two-column {
+  flex-direction: column;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.left-content, .right-content {
+  margin: 20px 0;
+  max-width: 100%;
+}
+}
+
+/* Box container for buttons */
+.button-box {
+  background-color: white; /* White box */
+  padding: 20px; /* Space around elements */
+  border-radius: 15px; /* Rounded corners */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Soft shadow effect */
+  text-align: center; /* Center content inside */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 90%; /* Adjust width */
+  max-width: 450px; /* Prevent it from getting too big */
+  margin: 0 auto; /* Center it horizontally */
+}
+
+/* Adjust spacing inside the box */
+.button-box > * {
+  margin-bottom: 0px; /* Space between elements */
+}
+
+.button-box button {
+  width: 80%; /* Make buttons more uniform */
+}
+
+.home-button {
+  display: block; /* Ensures it takes the full width */
+  background-color: white; /* White background */
+  color: #333; /* Dark text */
+  font-size: 16px;
+  font-weight: 600;
+  padding: 12px 24px;
+  border-radius: 30px; /* Fully rounded corners */
+  border: 2px solid #ccc; /* Light border */
+  text-decoration: none; /* Remove default link underline */
+  transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+  margin-top: 20px; /* Space from the text above */
+  text-align: left; /* Align text to the left */
+  width: fit-content; /* Ensures it doesn’t stretch */
+  margin-left: 0; /* Aligns it to the left */
+}
+
+
+
+.home-button:hover {
+  background-color: #f0f0f0; /* Light gray background on hover */
+  transform: scale(1.05);
+}
+
+.home-button:active {
+  transform: scale(0.95);
+}
+.tumor-scanner-title {
+  font-size: 3em; /* Large text */
+  font-weight: bold;
+  color: #0073ff; /* Same blue color as "Scan Image" button */
+  text-align: left;
+  margin-bottom: 0px;
+}
