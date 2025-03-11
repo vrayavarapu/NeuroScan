@@ -1,5 +1,5 @@
 
-const URL = "./model1/"; // Updated base URL for the breast cancer model files
+const URL = "./model5/"; // Updated base URL for the breast cancer model files
 let model, maxPredictions;
 
 // Initialize the Teachable Machine model
@@ -18,10 +18,10 @@ async function initModel() {
 // Function to generate treatment recommendations
 function generateTreatmentRecommendation(className) {
   switch (className) {
-    case "Chance of No Breast Cancer":
-      return "No signs of breast cancer detected. Maintain regular check-ups and a healthy lifestyle.";
-    case "Chance of Breast Cancer":
-      return "Recommended Treatment: Consult an oncologist for further tests like biopsy and imaging. Possible treatments include surgery, chemotherapy, radiation, or targeted therapy.";
+    case "Chance of No Dementia":
+      return "No signs of dementia detected. Maintain regular check-ups and a healthy lifestyle.";
+    case "Chance of Dementia":
+      return "Recommended Treatment: Consult a neurologist for cognitive assessments and brain imaging. Possible treatments include medication, cognitive therapy, lifestyle changes, and supportive care to manage symptoms and slow progression.";
     default:
       return "No specific recommendation available. Please consult a medical professional.";
   }

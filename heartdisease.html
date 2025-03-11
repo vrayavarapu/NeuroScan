@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    <title>NeuroScan AI</title>
+    <link rel="stylesheet" href="tumor.css"/>
+    <link rel="icon" href="logo1.png" type="image/x-icon"/>
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
+  </head>
+  <body> 
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+      <div class="nav-left">
+        <ul>  
+            <li><a href="index.html" style="color: rgb(106, 106, 224);" class="active">NeuroScan</a></li>
+            <li class="dropdown">
+              <a href="dementia.html">Brain Scans</a>
+              <ul class="dropdown-menu">
+                  <li><a href="tumor.html">Brain Tumor Scan</a></li>
+                  <li><a href="dementia.html">Dementia Scan</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="lungs.html">Lung Scans</a>
+              <ul class="dropdown-menu">
+                  <li><a href="lungcancer.html">Lung Cancer Scan</a></li>
+                  <li><a href="pneumonia.html">Pneumonia Scan</a></li>
+                  <li><a href="covid19.html">Covid-19 Scan</a></li>
+              </ul>
+            </li>
+            <li><a href="breastcancer.html">Breast Cancer Scan</a></li>
+            <li><a href="bonecancer.html">Bone Cancer Scan</a></li>
+            <li><a href="kidneycancer.html">Kidney Cancer Scan</a></li>
+            <li><a href="heartdisease.html">Heart Disease Scan</a></li>
+          </ul>
+      </div>
+        <ul>
+          <li><a href="index.html"><img style="padding-right: 15px;" src="logo1.png" alt="LifeSync Logo" class="nav-logo"/></a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+      <div class="two-column">
+        <!-- Left Column -->
+        <div class="left-content">
+            <br></br> 
+              <h1 class="tumor-scanner-title">Heart Disease Scanner</h1>
+              <h1 style = "font-size:2em"> Better Health <strong>For Free, </strong> All At Your <span class="highlight-green">Fingertips.</span></h1>
+              <p>
+                  Since creating AI Scanning, NeuroScan incorporates the latest verified research to detect tumors more effectively.
+              </p>
+              <a href="index.html" class="home-button">Go Back to Home Page</a>
+        </div>
+
+        <!-- Right Column -->
+        <div class="right-content">
+          <div class="input-box">
+            <h2>Enter Patient Data</h2>
+
+            <div class="input-group">
+              <label for="age">Age:</label>
+              <input type="number" id="age" placeholder="Enter Age">
+            </div>
+
+            <div class="input-group">
+              <label for="sex">Birth Sex:</label>
+              <select id="sex">
+                <option value="1">Male</option>
+                <option value="0">Female</option>
+              </select>
+            </div>
+
+            <div class="input-group">
+              <label for="cp">Chest Pain Type (0-3):</label>
+              <select id="cp">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+              </select>
+            </div>
+
+            <div class="input-group">
+              <label for="trestbps">Resting Blood Pressure (mmHg):</label>
+              <input type="number" id="trestbps" placeholder="Enter BP">
+            </div>
+
+            <div class="input-group">
+              <label for="chol">Cholesterol Level:</label>
+              <input type="number" id="chol" placeholder="Enter Cholesterol">
+            </div>
+
+            <div class="input-group">
+              <label for="fbs">Fasting Blood Sugar > 120 mg/dl:</label>
+              <select id="fbs">
+                <option value="1">Yes</option>
+                <option value="0">No</option>
+              </select>
+            </div>
+
+            <div class="input-group">
+              <label for="restecg">Resting ECG Results (0-2):</label>
+              <select id="restecg">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+              </select>
+            </div>
+
+            <div class="input-group">
+              <label for="thalach">Max Heart Rate Achieved:</label>
+              <input type="number" id="thalach" placeholder="Enter Max HR">
+            </div>
+
+            <div class="input-group">
+              <label for="exang">Exercise-Induced Angina:</label>
+              <select id="exang">
+                <option value="1">Yes</option>
+                <option value="0">No</option>
+              </select>
+            </div>
+
+            <div class="input-group">
+              <label for="oldpeak">ST Depression From Exercise:</label>
+              <input type="number" id="oldpeak" placeholder="Enter ST Depression">
+            </div>
+
+            <div class="input-group">
+              <label for="slope">Slope of Peak Exercise ST Segment (0-2):</label>
+              <select id="slope">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+              </select>
+            </div>
+
+            <div class="input-group">
+              <label for="ca">Number of Major Vessels Colored (0-3):</label>
+              <select id="ca">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+              </select>
+            </div>
+
+            <div class="input-group">
+              <label for="thal">Thalassemia Type (1-3):</label>
+              <select id="thal">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+              </select>
+            </div>
+
+            <button id="scanButton">Analyze</button>
+          </div>
+
+          <div id="results-container" style="display: none;">
+            <h2>Your Results have Arrived</h2>
+            <div id="result"></div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script src="heartdisease.js"></script>
+  </body>
+</html>
