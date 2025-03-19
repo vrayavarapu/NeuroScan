@@ -79,3 +79,62 @@ particlesJS('particles-js', {
   },
   retina_detect: true
 });
+const targetText = "NeuroScan"; // Final title
+const glitchTitle = document.getElementById("glitch-title");
+const chars = "01"; // Binary code
+let currentText = "";
+let iterations = 0;
+let maxIterations = 7; // Number of cycles before final text appears
+
+function generateBinary(length) {
+  let binaryStr = "";
+  for (let i = 0; i < length; i++) {
+    binaryStr += chars[Math.floor(Math.random() * chars.length)];
+  }
+  return binaryStr;
+}
+
+function glitchEffect() {
+  if (iterations < maxIterations) {
+    currentText = generateBinary(targetText.length);
+    glitchTitle.innerText = currentText;
+    iterations++;
+    setTimeout(glitchEffect, 50); // Speed of transition
+  } else {
+    revealText();
+  }
+}
+
+function revealText() {
+  let i = 0;
+  const interval = setInterval(() => {
+    glitchTitle.innerText = targetText.substring(0, i) + generateBinary(targetText.length - i);
+    i++;
+    if (i > targetText.length) {
+      clearInterval(interval);
+      glitchTitle.innerText = targetText;
+    }
+  }, 100);
+}
+
+// Start effect after page load
+window.onload = () => {
+  glitchEffect();
+};
+document.querySelectorAll(".dropdown").forEach((dropdown) => {
+  dropdown.addEventListener("mouseenter", function () {
+    this.querySelector(".dropdown-menu").style.display = "block";
+    this.querySelector(".dropdown-menu").style.opacity = 0;
+    setTimeout(() => {
+      this.querySelector(".dropdown-menu").style.opacity = 1;
+    }, 10);
+  });
+
+  dropdown.addEventListener("mouseleave", function () {
+    this.querySelector(".dropdown-menu").style.opacity = 0;
+    setTimeout(() => {
+      this.querySelector(".dropdown-menu").style.display = "none";
+    }, 200);
+  });
+});
+

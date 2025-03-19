@@ -1,5 +1,4 @@
-
-const URL = "./model1/"; // Updated base URL for the breast cancer model files
+const URL = "./model3/"; // Base URL for model files
 let model, maxPredictions;
 
 // Initialize the Teachable Machine model
@@ -18,10 +17,10 @@ async function initModel() {
 // Function to generate treatment recommendations
 function generateTreatmentRecommendation(className) {
   switch (className) {
-    case "Chance of No Breast Cancer":
-      return "No signs of breast cancer detected. Maintain regular check-ups and a healthy lifestyle.";
-    case "Chance of Breast Cancer":
-      return "Recommended Treatment: Consult an oncologist for further tests like biopsy and imaging. Possible treatments include surgery, chemotherapy, radiation, or targeted therapy.";
+    case "Chance of No Bone Cancer":
+      return "No signs of bone cancer detected. Maintain a healthy lifestyle and schedule regular checkups.";
+    case "Chance of Bone Cancer":
+      return "Recommended Treatment: seek immediate medical advice from an oncologist to explore treatment options such as surgery, chemotherapy, radiation therapy, and targeted therapy based on the type and stage of cancer.";
     default:
       return "No specific recommendation available. Please consult a medical professional.";
   }
@@ -77,32 +76,32 @@ document.getElementById("imageUpload").addEventListener("change", (event) => {
 
 // Scan image when the button is clicked
 document.getElementById("scanButton").addEventListener("click", async () => {
-  const img = document.querySelector("#imageDisplay img");
-  if (!img) {
-    alert("Please upload an image before scanning.");
-    return;
-  }
+    const img = document.querySelector("#imageDisplay img");
+    if (!img) {
+      alert("Please upload an image before scanning.");
+      return;
+    }
+    
+    const scanButton = document.getElementById("scanButton");
+    scanButton.disabled = true;
   
-  const scanButton = document.getElementById("scanButton");
-  scanButton.disabled = true;
+    const resultsContainer = document.getElementById("results-container");
+    resultsContainer.style.display = "block";
+    const resultDiv = document.getElementById("result");
   
-  const resultsContainer = document.getElementById("results-container");
-  resultsContainer.style.display = "block";
-  const resultDiv = document.getElementById("result");
+    resultDiv.innerHTML = "Analyzing patterns...";
+    await new Promise(resolve => setTimeout(resolve, 600));
   
-  resultDiv.innerHTML = "Analyzing patterns...";
-  await new Promise(resolve => setTimeout(resolve, 600));
+    resultDiv.innerHTML = "Comparing patterns...";
+    await new Promise(resolve => setTimeout(resolve, 600));
   
-  resultDiv.innerHTML = "Comparing patterns...";
-  await new Promise(resolve => setTimeout(resolve, 600));
+    resultDiv.innerHTML = "Looking at accuracy...";
+    await new Promise(resolve => setTimeout(resolve, 800));
   
-  resultDiv.innerHTML = "Looking at accuracy...";
-  await new Promise(resolve => setTimeout(resolve, 800));
+    await predictImage();
   
-  await predictImage();
-  
-  scanButton.disabled = false;
+    scanButton.disabled = false;
 });
-
+  
 // Start model initialization
 initModel();

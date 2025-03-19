@@ -20,14 +20,31 @@
       <div class="nav-left">
         <!--<h3 class="site-title">NeuroScan</h3>-->
         <ul>  
-          <li><a href="index.html" style="color: rgb(106, 106, 224);">NeuroScan</a></li>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="tumor.html">Brain Tumor Scan</a></li>
+          <!-- Dropdown Parent -->
+          <li><a href="index.html" style="color: rgb(106, 106, 224);" >NeuroScan</a></li>
+          <li class="dropdown">
+            <a href="breastcancer.html" >Brain Scans</a>
+            <ul class="dropdown-menu">
+                <li><a href="tumor.html">Brain Tumor Scan</a></li>
+                <li><a href="dementia.html">Dementia Scan</a></li>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a href="breastcancer.html" >Lung Scans</a>
+            <ul class="dropdown-menu">
+                <li><a href="lungcancer.html">Lung Cancer Scan</a></li>
+                <li><a href="pneumonia.html">Pneumonia Scan</a></li>
+            </ul>
+          </li>
           <li><a href="breastcancer.html" class="active">Breast Cancer Scan</a></li>
-          <li><a href="lungcancer.html">Lung Cancer Scan</a></li>
+          <li><a href="bonecancer.html">Bone Cancer Scan</a></li>
+          <li><a href="kidneycancer.html">Kidney Cancer Scan</a></li>
+          <li><a href="covid19.html">Covid Scan</a></li>
         </ul>
       </div>
-      <img style="padding-right: 10%;" src="logo1.png" alt="LifeSync Logo" class="nav-logo"/>
+        <ul>
+          <li><a href="index.html"><img style="padding-right: 15px;" src="logo1.png" alt="LifeSync Logo" class="nav-logo"/></a></li>
+        </ul>
     </nav>
 
     <!-- Main Content -->
@@ -38,7 +55,7 @@
         <div class="left-content">
           <br></br> 
             <h1 class="tumor-scanner-title">Breast Cancer Scanner</h1>
-            <h1> Answers from Images <strong>With</strong> you in <span class="highlight-green">mind.</span></h1>
+            <h1 style = "font-size:2em"> Answers From Images <strong>With</strong>  <span class="highlight-green">You In Mind.</span></h1>
             <p>
                 Since creating AI Scanning, NeuroScan incorporates the latest verified research to detect tumors more effectively.
             </p>
