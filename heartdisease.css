@@ -314,14 +314,16 @@ body {
 }
 
 /* Left and Right column basic styling */
-.left-content, 
-.right-content {
+.left-content {
   flex: 1;              /* Each column can expand/shrink equally */
   min-width: 300px;     /* Ensure columns don’t get too narrow */
   margin: 20px;
 }
 .right-content {
     text-align: left;
+    flex: 1;              /* Each column can expand/shrink equally */
+    min-width: 300px;     /* Ensure columns don’t get too narrow */
+    margin: 20px;
 }
 
 /* Left column headings */
@@ -353,6 +355,9 @@ body {
   .left-content, .right-content {
     margin: 20px 0;
     max-width: 100%;
+  }
+  .right-content {
+    text-align: left;
   }
 }
 
