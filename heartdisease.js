@@ -4,8 +4,8 @@ let model; // Global model variable
 async function loadModel() {
     try {
         console.log("Loading model...");
-        model = await tf.loadLayersModel('model8/model.json', {strict: false});
-        
+        model = await tf.loadLayersModel('model8/model.json', { strict: false });
+
         console.log("Model loaded successfully!");
 
         // Periodically check if the model is built
@@ -88,19 +88,23 @@ async function predictHeartDisease(inputData) {
         }
 
         // Calculate probabilities
-        const probabilityHeartDisease = 1 - output[0];  // Flip it
-        const probabilityNoHeartDisease = output[0];
+        const probabilityHeartDisease = output[0];  // Flip it
+        const probabilityNoHeartDisease = 1 - output[0];
 
         // Round to two decimal places
         const heartDiseasePercentage = (probabilityHeartDisease * 100).toFixed(2);
         const noHeartDiseasePercentage = (probabilityNoHeartDisease * 100).toFixed(2);
-
+        let feedbackDisease = 'null';
+        if(heartDiseasePercentage>noHeartDiseasePercentage)
+            feedbackDisease = 'Recommended Treatment: Risk detected, please see a doctor before making any decisions. A comprehensive treatment plan may include lifestyle changes such as a heart-healthy diet, regular exercise, medications like statins or beta-blockers, and possibly surgical interventions like angioplasty or bypass surgery, depending on severity.';
+        else
+            feedbackDisease = 'Recommended Treatment: No risk detected, continue maintaining a healthy lifestyle through regular exercise, a balanced diet, and routine check-ups. Continue to prevent future heart disease risk and ensure overall well-being.';
         // Update the results
         const resultContainer = document.getElementById("results-container");
         const resultText = document.getElementById("result");
 
-        resultText.innerText = `Heart Disease: ${heartDiseasePercentage}% | No Heart Disease: ${noHeartDiseasePercentage}%`;
-        
+        resultText.innerText = `Heart Disease: ${heartDiseasePercentage}% | No Heart Disease: ${noHeartDiseasePercentage}% `+feedbackDisease;
+
         // Ensure result container is visible
         resultContainer.style.display = "block";
 
@@ -108,8 +112,6 @@ async function predictHeartDisease(inputData) {
         console.error("Error during prediction:", err);
     }
 }
-
-
 
 // Function to collect input data and make a prediction
 function makePrediction() {
@@ -125,6 +127,13 @@ function makePrediction() {
     }
 
     console.log("Input Data:", inputData);  // Verify the input data
+
+    // Reset results container before making a new prediction
+    const resultContainer = document.getElementById("results-container");
+    const resultText = document.getElementById("result");
+    resultText.innerText = "Processing...";  // Display processing message
+
+    // Call prediction function
     predictHeartDisease(inputData);
 }
 

@@ -201,6 +201,7 @@ html {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+
   /*
  border: solid 5px rgb(93, 93, 155);
   padding-left: 10%;
@@ -209,7 +210,10 @@ html {
   pointer-events: none;
   */
 }
-
+.large-image {
+    width: 500px;  /* Specify a fixed width */
+    height: auto;  /* Keeps the aspect ratio */
+}
 /* Make all children (buttons, text) receive pointer events */
 .title_text * {
   pointer-events: auto;
