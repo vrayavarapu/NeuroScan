@@ -68,28 +68,48 @@ async function predictHeartDisease(inputData) {
         return;
     }
 
-    // Ensure input is a 2D tensor
-    const inputTensor = tf.tensor2d([inputData]);
-    console.log("Model input shape:", model.inputs);
+    // Ensure input is a 2D tensor and force fresh memory allocation
+    const inputTensor = tf.tensor2d([inputData], [1, 13]);
 
     try {
         const prediction = model.predict(inputTensor);
         const output = await prediction.data();
+
+        // Dispose of tensors to clear memory
+        inputTensor.dispose();
+        prediction.dispose();
+
         console.log("Prediction Output:", output);
 
-        // Display result (ensure that it's updated correctly)
-        const resultText = output[0] > 0.5 ? "Chance of Heart Disease: " + (output[0]*100).toFixed(2)+"%": "Chance of No Heart Disease: " + ((1-output[0])*100).toFixed(2)+"%";
-        document.getElementById("result").innerText = resultText;
+        // Ensure output is valid
+        if (output.length < 1) {
+            console.error("Unexpected prediction output:", output);
+            return;
+        }
 
-        // Show result container
-        document.getElementById("results-container").style.display = "block";
+        // Calculate probabilities
+        const probabilityHeartDisease = 1 - output[0];  // Flip it
+        const probabilityNoHeartDisease = output[0];
 
-        // Log for debugging
-        console.log("Result Text Set To:", resultText);
+        // Round to two decimal places
+        const heartDiseasePercentage = (probabilityHeartDisease * 100).toFixed(2);
+        const noHeartDiseasePercentage = (probabilityNoHeartDisease * 100).toFixed(2);
+
+        // Update the results
+        const resultContainer = document.getElementById("results-container");
+        const resultText = document.getElementById("result");
+
+        resultText.innerText = `Heart Disease: ${heartDiseasePercentage}% | No Heart Disease: ${noHeartDiseasePercentage}%`;
+        
+        // Ensure result container is visible
+        resultContainer.style.display = "block";
+
     } catch (err) {
         console.error("Error during prediction:", err);
     }
 }
+
+
 
 // Function to collect input data and make a prediction
 function makePrediction() {
