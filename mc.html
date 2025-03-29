@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    <title>NeuroScan AI</title>
+    <link rel="stylesheet" href="tumor.css"/>
+    <link rel="icon" href="logo1.png" type="image/x-icon"/>
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+    <!--<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>-->
+    <script src="https://unpkg.com/@tensorflow/tfjs"></script>
+  </head>
+  <body> 
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+      <div class="nav-left">
+        <ul>  
+            <li><a href="index.html" style="color: rgb(106, 106, 224);" >NeuroScan</a></li>
+            <li class="dropdown">
+              <a href="mc.html" >Our Cancer Models</a>
+              <ul class="dropdown-menu">
+                  <li><a href="tumor.html">Brain Tumor Scan</a></li>
+                  <li><a href="breastcancer.html">Breast Cancer Scan</a></li>
+                  <li><a href="bonecancer.html">Bone Cancer Scan</a></li>
+                  <li><a href="kidneycancer.html">Kidney Cancer Scan</a></li>
+                  <li><a href="lungcancer.html">Lung Cancer Scan</a></li>
+              </ul>
+            <li><li class="dropdown">
+              <a href="mc.html" class="active">Our Disease Models</a>
+              <ul class="dropdown-menu">
+                  <li><a href="pneumonia.html">Pneumonia Scan</a></li>
+                  <li><a href="covid19.html">Covid Scan</a></li>
+                  <li><a href="heartdisease.html">Heart Scan</a></li>
+                  <li><a href="mc.html">Multiple Schlerosis Scan</a></li>
+                  <li><a href="diabetes.html">Diabetes Scan</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="mc.html" >Our Other Models</a>
+              <ul class="dropdown-menu">
+                  <li><a href="dementia.html">Dementia Scan</a></li>
+              </ul>
+            </li>
+          </ul>
+      </div>
+        <ul>
+          <li><a href="index.html"><img style="padding-right: 15px;" src="logo1.png" alt="LifeSync Logo" class="nav-logo"/></a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+      <div class="two-column">
+        <!-- Left Column -->
+        <div class="left-content">
+            <br></br> 
+              <h1 class="tumor-scanner-title">Multiple Schlerosis Scanner</h1>
+              <h1 style = "font-size:2em"> Great Health, <strong> Great Accuracy, </strong> And No <span class="highlight-green">Money.</span></h1>
+              <p>
+                  Since creating AI Scanning, NeuroScan incorporates the latest verified research to detect tumors more effectively.
+              </p>
+              <a href="index.html" class="home-button">Go Back to Home Page</a>
+        </div>
+
+        <!-- Right Column -->
+        <div class="right-content">
+          <div class="button-box">
+            <div class="input-box">
+                <h2>Enter Patient Data</h2>
+
+                <div class="input-group">
+                <label for="Gender">Birth Sex:</label>
+                <select id="Gender">
+                    <option value="1">Male</option>
+                    <option value="2">Female</option>
+                </select>
+                </div>
+
+                <div class="input-group">
+                <label for="Age">Age:</label>
+                <input type="number" id="Age" placeholder="Enter Age">
+                </div>
+
+                <div class="input-group">
+                <label for="Schooling">Schooling Duration:</label>
+                <input type="number" id="Schooling" placeholder="Enter Schooling Duration">
+                </div>
+
+                <div class="input-group">
+                <label for="Breastfeeding">Breastfeeding (1-3):</label>
+                <select id="Breastfeeding">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                </select>
+                </div>
+
+                <div class="input-group">
+                <label for="Varicella">Varicella (1-3):</label>
+                <select id="Varicella">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                </select>
+                </div>
+
+                <div class="input-group">
+                <label for="Initial_Symptom">Initial_Symptom:</label>
+                <input type="number" id="Initial_Symptom" placeholder="Enter Initial Symptom">
+                </div>
+
+                <div class="input-group">
+                <label for="Mono_or_Polysymptomatic">Mono_or_Polysymptomatic (1-2):</label>
+                <select id="Mono_or_Polysymptomatic">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                </select>
+                </div>
+
+                <div class="input-group">
+                    <label for="Oligoclonal_Bands">Oligoclonal_Bands (0-2):</label>
+                    <select id="Oligoclonal_Bands">
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                    </select>
+                </div>
+
+                <div class="input-group">
+                    <label for="LLSSEP">LLSSEP (0-1):</label>
+                    <select id="LLSSEP">
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                    </select>
+                </div>
+
+                <div class="input-group">
+                    <label for="ULSSEP">ULSSEP (0-1):</label>
+                    <select id="ULSSEP">
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                    </select>
+                </div>
+
+                <div class="input-group">
+                    <label for="VEP">VEP (0-1):</label>
+                    <select id="VEP">
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                    </select>
+                </div>
+
+                <div class="input-group">
+                    <label for="BAEP">BAEP (0-1):</label>
+                    <select id="BAEP">
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                    </select>
+                </div>
+
+                <div class="input-group">
+                    <label for="Periventricular_MRI">Periventricular_MRI (0-1):</label>
+                    <select id="Periventricular_MRI">
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                    </select>
+                </div>
+
+                <div class="input-group">
+                    <label for="Cortical_MRI">Cortical_MRI (0-1):</label>
+                    <select id="Cortical_MRI">
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                    </select>
+                </div>
+
+                <div class="input-group">
+                    <label for="Infratentorial_MRI">Infratentorial_MRI (0-1):</label>
+                    <select id="Infratentorial_MRI">
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                    </select>
+                </div>
+
+                <div class="input-group">
+                    <label for="Spinal_Cord_MRI">Spinal_Cord_MRI (0-1):</label>
+                    <select id="Spinal_Cord_MRI">
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                    </select>
+                </div>
+                
+                <div class="input-group">
+                    <label for="Initial_EDSS">Initial_EDSS (1-3):</label>
+                    <select id="Initial_EDSS">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                    </select>
+                </div>
+
+                <div class="input-group">
+                    <label for="Final_EDSS">Final_EDSS (1-3):</label>
+                    <select id="Final_EDSS">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                    </select>
+                </div>
+
+                <button id="scanButton">Analyze</button>
+            </div>
+          </div>
+
+          <div id="results-container" style="display: none;">
+            <h2>Your Results have Arrived</h2>
+            <div id="result"></div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script src="mc.js"></script>
+  </body>
+</html>

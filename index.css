@@ -565,6 +565,33 @@ button a {
     background-image: linear-gradient(90deg, rgb(255, 160, 180), rgb(255, 200, 150), rgb(244, 169, 48), rgb(255, 160, 180) ) ;
     box-shadow: rgba(255, 200, 150) 0px 4px 15px 0px;
   }
+  /* Electric Blue Gradient */
+/* Fiery Red Gradient */
+/* Mystic Twilight Gradient */
+/* Retro Gradient */
+.btn-moving-gradient--hot-pink {
+  background-image: linear-gradient(90deg, rgb(255, 20, 147), rgb(255, 105, 180), rgb(255, 20, 147), rgb(255, 105, 180));
+  box-shadow: rgb(255, 20, 147) 0px 4px 15px 0px;
+}
+
+/* Deep Blue Ocean Gradient */
+.btn-moving-gradient--deep-blue {
+  background-image: linear-gradient(90deg, rgb(0, 0, 139), rgb(0, 0, 255), rgb(70, 130, 180), rgb(0, 0, 139));
+  box-shadow: rgb(0, 0, 255) 0px 4px 15px 0px;
+}
+
+/* Sunset Orange Gradient */
+.btn-moving-gradient--oranger {
+  background-image: linear-gradient(90deg, rgb(255, 140, 0), rgb(255, 94, 77), rgb(255, 165, 0), rgb(255, 94, 77));
+  box-shadow: rgb(255, 140, 0) 0px 4px 15px 0px;
+}
+
+/* Cosmic Purple Gradient */
+.btn-moving-gradient--purpal {
+  background-image: linear-gradient(90deg, rgb(128, 0, 255), rgb(204, 0, 255), rgb(102, 0, 204), rgb(128, 0, 255));
+  box-shadow: rgb(128, 0, 255) 0px 4px 15px 0px;
+}
+
   .our-models-title {
     font-family: "Poppins", sans-serif;
     font-weight: 900;
