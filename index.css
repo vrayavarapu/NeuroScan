@@ -1,15 +1,15 @@
 
 body {
     font-family: 'Poppins', sans-serif;
-    background: linear-gradient(135deg, #f0eafa, #e0d8f5); /* Softer, lighter background */
-    color: #333; /* Darker text for better readability */
+    background-color: #f2f2f2;
+    color: #333;
     text-align: center;
-    overflow-x: hidden; /* Hide horizontal overflow */
     margin: 0;
     padding: 0;
   }
 html {
     scroll-behavior: smooth;
+
 }
 .poppins-thin {
   font-family: "Poppins", sans-serif;
@@ -119,14 +119,14 @@ html {
   font-style: italic; 
 }
 #glitch-title {
-  font-size: 4em;
-  font-family: 'Orbitron', sans-serif; /* Futuristic font */
+  font-size: 3em;
+  font-family: 'Courier New', monospace;
   text-align: center;
-  color: #7979ff; /* Neuroscan Purple */
+  color: rgb(121, 121, 255); /* Neon green for hacker-style */
   white-space: nowrap;
   overflow: hidden;
 } 
-/* Ensure the dropdown menu is hidden by default */
+
 /* Ensure the dropdown menu is hidden by default */
 .dropdown {
   position: relative; /* Needed for absolute positioning of the dropdown menu */
@@ -135,7 +135,7 @@ html {
   display: none;
   position: absolute;
   top: 100%;
-  left: 0;
+  left: 0; 
   background: #f8f8ff; /* Light background for dropdowns */
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
   list-style: none;
@@ -146,7 +146,6 @@ html {
   visibility: hidden; /* Ensure it’s not interactive */
   flex-direction: column; /* Keeps it stacked vertically */
   transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
-  border-radius: 10px;
 }
 
 /* Style for each item inside the dropdown */
@@ -158,7 +157,7 @@ html {
 /* Style for links inside the dropdown */
 .dropdown-menu a {
   text-decoration: none; 
-  color: #333; /* Dark text for better visibility */
+  color: black;
   display: block;
 }
 
@@ -173,7 +172,7 @@ html {
 .spinning_brain {
   position: fixed;
   color: #fff;
-  opacity: 0.15; /* Increased slightly */
+  opacity: 0.1;
   object-fit: cover; 
   object-position: center; 
   -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
@@ -186,17 +185,17 @@ html {
   height: 100vh;
 }
 .highlight-green {
-  color: #38966D; /* Bright green */
-  font-weight: bold; /* Kept bold */
+  color: #38966D;
+  font-weight: bold;
 }
 .highlight-blue {
   color: #0073ff;
-  font-weight: bold; 
+  font-weight: bold;
 }
 .highlight-gray {
   color: #b94e4e;
-  font-weight: bold; 
-}
+  font-weight: bold;
+} 
 .title_text {
   position: absolute;
   top: 50%;
@@ -229,16 +228,15 @@ html {
 
 button {
   display: inline-block; /* Ensures button wraps content properly */
-  background-color: #7979ff; /* Neuroscan Purple */
-  color: #ffffff; /* White text */
-  font-size: 20px; /* Increased font size */
+  background-color: blue;
+  color: white;
+  font-size: 18px; /* Increase font size */
   font-weight: 600;
-  padding: 18px 36px; /* Ensure enough clickable area */
-  min-width: 220px; /* Minimum width for better hitbox */
-  border: none; /* Removes the border */
-  border-radius: 10px; /* Rounded corners */
+  padding: 24px 32px; /* Ensure enough clickable area */
+  min-width: 250px; /* Minimum width for better hitbox */
+  border: none;
+  border-radius: 5px;
   cursor: pointer;
-  text-align: center; /* Center the text */
   transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
 }
 
@@ -257,7 +255,6 @@ button a {
   display: block;
   width: 100%;
   height: 100%;
-  text-align: center; /* Ensure text is centered */
 }
 
 .cairo {
@@ -302,8 +299,8 @@ button a {
   .navbar {
     display: flex;
     justify-content: space-between;
-    align-items: center; 
-    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white */
+    align-items: center;
+    background-color: #ffffff;
     padding: 1.5% 3%;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Slightly stronger shadow */
     position: fixed;
@@ -342,23 +339,23 @@ button a {
   
   .navbar ul li a {
     text-decoration: none;
-    font-weight: 600;
-    color: #333; /* Dark text */
-    font-size: 17px;
+    font-weight: 600;  
+    color: #333;
+    font-size: 16.25px;
+    border-bottom: 2px solid transparent;
     transition: color 0.3s ease-in-out, transform 0.2s ease-in-out;
     display: inline-block;
   }
   
   .navbar ul li a:hover {
-    color: #7979ff; /* Purple on hover */
-
-    transform: scale(1.02);
+    color: black;
+    transform: scale(1.03);
     transition: color 0.3s ease-in-out, transform 0.2s ease-in-out;
     border-bottom: 2px solid black;
   }
   
   .nav-logo {
-    height: 60px;
+    height: 60px; 
     width: auto;
     text-decoration: none;
     list-style: none;
@@ -367,35 +364,31 @@ button a {
   }
   
   .navbar ul li a.active {
-    border-bottom: 2px solid #00ccff; /* Electric blue for active link */
-    transform: scale(1.02);
+    border-bottom: 2px solid black;
+    transform: scale(1.03);
   }
-  
-
   
   /* Main Content */
   main {
     padding: 100px 20px 50px; /* account for fixed nav at top */ 
   }
   
-  h1 { /* Modified to be more futuristic */
-    color: #333; /* Dark text */
-    font-size: 45px;
-    font-weight: 800; /* Bolder */
-    text-shadow: 0 0 5px rgba(121, 121, 255, 0.5); /* Glow effect */
-    white-space: nowrap; 
-    font-family: 'Orbitron', sans-serif; /* Futuristic font */
+  h1 {
+    color: #222;
+    font-size: 42px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    white-space: nowrap;
   }
 
   h2 { 
-    color: #555; /* Slightly lighter */
-    text-shadow: 0 0 3px rgba(121, 121, 255, 0.3); /* Subtle glow */
-    font-size: 18px;
-    font-weight: 400;
-    margin-bottom: 15px;
+    color: #222;
+    font-size: 20px;
+    font-weight: 300;
+    margin-bottom: 10px;
     white-space: nowrap;
   }
-  
+
   p {
     font-size: 18px; /* Increased slightly */
     color: #ccc; /* Lighter */
@@ -430,7 +423,7 @@ button a {
   .menu-button {
     background: none;
     border: none;
-    color: #333; /* Dark text */
+    color: #333;
     cursor: pointer;
     display: none; /* Hidden by default */
   }
@@ -450,13 +443,13 @@ button a {
   .nav-menu a {
     text-decoration: none;
     font-weight: 600;
-    color: #333; /* Dark text */
+    color: #333;
     font-size: 16px;
     transition: color 0.3s ease-in-out, transform 0.2s ease-in-out;
     display: inline-block;
   }
 
-  .nav-menu a:hover {
+  .nav-menu a:hover { 
     color: #00ccff; /* Electric blue on hover */
     transform: scale(1.1);
   }
@@ -495,10 +488,10 @@ button a {
       height: 100%;
       top: 0;
       left: 0;
-      z-index: -1; /* Make sure particles are in the background */
+      z-index: -1;
     }
     #particles-js canvas { 
-      border-color: black !important; 
+      border-color: black !important;
     } 
     
     
@@ -570,57 +563,57 @@ button a {
 .btn-moving-gradient--purpal {
   background-image: linear-gradient(90deg, rgb(128, 0, 255), rgb(204, 0, 255), rgb(102, 0, 204), rgb(128, 0, 255));
   box-shadow: rgb(128, 0, 255) 0px 4px 15px 0px;
-}
-
+} 
   .our-models-title {
-    font-family: 'Orbitron', sans-serif;
+    font-family: "Poppins", sans-serif;
     font-weight: 900;
     font-size: 3em;
-    color: #333; /* Dark text */
-    text-shadow: 0 0 5px rgba(121, 121, 255, 0.5); /* Glow effect */
+    color: black;
     text-transform: uppercase;
     text-align: center;
     margin-bottom: 20px;
 }
 .descriptions {
-  display: flex; 
+  display: flex;
   flex-wrap: wrap; /* Allows items to wrap into a new row */
   justify-content: center;
   gap: 5%; /* Space between items */
   text-align: center;
   max-width: 90%;
   margin: 0 auto;
+
 }
+
 .gradient-text {
   font-size: 48px;
   font-weight: bold;
-  background-image: linear-gradient(to right, #00ccff, #82bcff);
+  background-image: linear-gradient(to right, #fc7c68, #82bcff);
   -webkit-background-clip: text;
-  color: transparent; /* Make the text color transparent so the gradient shows through */
+  color: transparent;
 }
 
 
-.descriptions > div { /* Changed to direct child selector */
+.descriptions > div {
   flex: 1 1 calc(50% - 20px); /* Ensures each div takes up half of the container */
   max-width: 45%; /* Prevents items from becoming too wide */
-  background-color: rgba(255, 255, 255, 0.05);
-  padding: 20px;
-  border-radius: 10px;
+  display: flex;
+  flex-direction: column; /* Stack elements vertically */
+  justify-content: space-between; /* Ensures even spacing */
+  height: 100%; /* Ensures all divs have the same height */
+  box-sizing: border-box;
 }
-
 
 .descriptions h4 {
   font-size: 1.1em;
   font-weight: 500;
   line-height: 1.5;
   text-align: center;
-  color: #333;
 }
 
 .descriptions button {
   align-self: center; /* Centers the button */
   margin-top: auto; /* Pushes the button to the bottom */
 }
-
+ 
 
 
