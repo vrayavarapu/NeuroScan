@@ -21,7 +21,7 @@
         <ul>  
             <li><a href="index.html" style="color: rgb(106, 106, 224);" >NeuroScan</a></li>
             <li class="dropdown">
-              <a href="mc.html" >Our Cancer Models</a>
+              <a href="mental.html" >Our Cancer Models</a>
               <ul class="dropdown-menu">
                   <li><a href="tumor.html">Brain Tumor Scan</a></li>
                   <li><a href="breastcancer.html">Breast Cancer Scan</a></li>
@@ -30,7 +30,7 @@
                   <li><a href="lungcancer.html">Lung Cancer Scan</a></li>
               </ul>
             <li><li class="dropdown">
-              <a href="mc.html" class="active">Our Disease Models</a>
+              <a href="mental.html">Our Disease Models</a>
               <ul class="dropdown-menu">
                   <li><a href="pneumonia.html">Pneumonia Scan</a></li>
                   <li><a href="covid19.html">Covid Scan</a></li>
@@ -40,9 +40,10 @@
               </ul>
             </li>
             <li class="dropdown">
-              <a href="mc.html" >Our Other Models</a>
+              <a href="mental.html" class="active">Our Cognitive Models</a>
               <ul class="dropdown-menu">
                   <li><a href="dementia.html">Dementia Scan</a></li>
+                  <li><a href="mental.html">Depression Scan</a></li>
               </ul>
             </li>
           </ul>
@@ -59,7 +60,7 @@
         <div class="left-content">
             <br></br> 
               <h1 class="tumor-scanner-title">Mental Health Scanner</h1>
-              <h1 style = "font-size:2em"> Great Health, <strong> Great Accuracy, </strong> And No <span class="highlight-green">Money.</span></h1>
+              <h1 style = "font-size:2em">Helping <strong> <span class="highlight-green">You</span> </strong> Is Our Pleasure.</h1>              
               <p>
                   Since creating AI Scanning, NeuroScan incorporates the latest verified research to detect tumors more effectively.
               </p>
@@ -73,144 +74,121 @@
                 <h2>Enter Patient Data</h2>
 
                 <div class="input-group">
-                <label for="Gender">Birth Sex:</label>
+                <label for="Gender">Gender:</label>
                 <select id="Gender">
-                    <option value="1">Male</option>
-                    <option value="2">Female</option>
+                    <option value=0>Female</option>
+                    <option value=1>Male</option>
                 </select>
                 </div>
 
                 <div class="input-group">
-                <label for="Age">Age:</label>
-                <input type="number" id="Age" placeholder="Enter Age">
+                    <label for="Age">Age:</label>
+                    <input type="number" id="Age" placeholder="Enter Age">
                 </div>
 
                 <div class="input-group">
-                <label for="Schooling">Schooling Duration:</label>
-                <input type="number" id="Schooling" placeholder="Enter Schooling Duration">
-                </div>
-
-                <div class="input-group">
-                <label for="Breastfeeding">Breastfeeding (1-3):</label>
-                <select id="Breastfeeding">
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                </select>
-                </div>
-
-                <div class="input-group">
-                <label for="Varicella">Varicella (1-3):</label>
-                <select id="Varicella">
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                </select>
-                </div>
-
-                <div class="input-group">
-                <label for="Initial_Symptom">Initial_Symptom:</label>
-                <input type="number" id="Initial_Symptom" placeholder="Enter Initial Symptom">
-                </div>
-
-                <div class="input-group">
-                <label for="Mono_or_Polysymptomatic">Mono_or_Polysymptomatic (1-2):</label>
-                <select id="Mono_or_Polysymptomatic">
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                </select>
-                </div>
-
-                <div class="input-group">
-                    <label for="Oligoclonal_Bands">Oligoclonal_Bands (0-2):</label>
-                    <select id="Oligoclonal_Bands">
-                        <option value="0">0</option>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
+                    <label for="Student or Professional">Student or Professional:</label>
+                    <select id="Student or Professional">
+                        <option value="0">Student</option>
+                        <option value="1">Professional</option>
                     </select>
                 </div>
 
                 <div class="input-group">
-                    <label for="LLSSEP">LLSSEP (0-1):</label>
-                    <select id="LLSSEP">
-                        <option value="0">0</option>
-                        <option value="1">1</option>
-                    </select>
-                </div>
-
-                <div class="input-group">
-                    <label for="ULSSEP">ULSSEP (0-1):</label>
-                    <select id="ULSSEP">
-                        <option value="0">0</option>
-                        <option value="1">1</option>
-                    </select>
-                </div>
-
-                <div class="input-group">
-                    <label for="VEP">VEP (0-1):</label>
-                    <select id="VEP">
-                        <option value="0">0</option>
-                        <option value="1">1</option>
-                    </select>
-                </div>
-
-                <div class="input-group">
-                    <label for="BAEP">BAEP (0-1):</label>
-                    <select id="BAEP">
-                        <option value="0">0</option>
-                        <option value="1">1</option>
-                    </select>
-                </div>
-
-                <div class="input-group">
-                    <label for="Periventricular_MRI">Periventricular_MRI (0-1):</label>
-                    <select id="Periventricular_MRI">
-                        <option value="0">0</option>
-                        <option value="1">1</option>
-                    </select>
-                </div>
-
-                <div class="input-group">
-                    <label for="Cortical_MRI">Cortical_MRI (0-1):</label>
-                    <select id="Cortical_MRI">
-                        <option value="0">0</option>
-                        <option value="1">1</option>
-                    </select>
-                </div>
-
-                <div class="input-group">
-                    <label for="Infratentorial_MRI">Infratentorial_MRI (0-1):</label>
-                    <select id="Infratentorial_MRI">
-                        <option value="0">0</option>
-                        <option value="1">1</option>
-                    </select>
-                </div>
-
-                <div class="input-group">
-                    <label for="Spinal_Cord_MRI">Spinal_Cord_MRI (0-1):</label>
-                    <select id="Spinal_Cord_MRI">
-                        <option value="0">0</option>
-                        <option value="1">1</option>
-                    </select>
-                </div>
-                
-                <div class="input-group">
-                    <label for="Initial_EDSS">Initial_EDSS (1-3):</label>
-                    <select id="Initial_EDSS">
+                    <label for="Pressure">Pressure(scale of 1-5):</label>
+                    <select id="Pressure">
                         <option value="1">1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
                     </select>
                 </div>
 
                 <div class="input-group">
-                    <label for="Final_EDSS">Final_EDSS (1-3):</label>
-                    <select id="Final_EDSS">
+                    <label for="Sleep Duration">Sleep Duration:</label>
+                    <select id="Sleep Duration">
+                        <option value="0">below 5 hours</option>
+                        <option value="1">5-6 hours</option>
+                        <option value="2">7-8 hours</option>
+                        <option value="3">8+ hours</option>
+                    </select>
+                </div>
+
+                <div class="input-group">
+                    <label for="Dietary Habits">Dietary Habits:</label>
+                    <select id="Dietary Habits">
+                        <option value="0">Healthy</option>
+                        <option value="1">Moderate</option>
+                        <option value="2">Unhealthy</option>
+                    </select>
+                </div>
+
+                <div class="input-group">
+                    <label for="Degree">Degree Type:</label>
+                    <select id="Degree">
+                        <option value="MA">MA</option>
+                        <option value="B.Com">B.Com</option>
+                        <option value="MD">MD</option>
+                        <option value="M.Com">M.Com</option>
+                        <option value="BE">BE</option>
+                        <option value="MCA">MCA</option>
+                        <option value="LLM">LLM</option>
+                        <option value="BA">BA</option>
+                        <option value="BCA">BCA</option>
+                        <option value="Class 12">Class 12</option>
+                        <option value="B.Ed">B.Ed</option>
+                        <option value="M.Tech">M.Tech</option>
+                        <option value="LLB">LLB</option>
+                        <option value="B.Arch">B.Arch</option>
+                        <option value="ME">ME</option>
+                        <option value="MBA">MBA</option>
+                        <option value="BBA">BBA</option>
+                        <option value="PhD">PhD</option>
+                        <option value="M.Pharm">M.Pharm</option>
+                        <option value="MBBS">MBBS</option>
+                        <option value="BHM">BHM</option>
+                        <option value="MHM">MHM</option>
+                        <option value="BSc">BSc</option>
+                        <option value="MSc">MSc</option>
+                        <option value="B.Pharm">B.Pharm</option>
+                        <option value="B.Tech">B.Tech</option>
+                        <option value="M.Ed">M.Ed</option>
+                    </select>
+                </div>
+
+                <div class="input-group">
+                    <label for="Have you ever had suicidal thoughts ?">Suicidal Thoughts:</label>
+                    <select id="Have you ever had suicidal thoughts ?">
+                        <option value="0">No</option>
+                        <option value="1">Yes</option>
+                    </select>
+                </div>
+
+                <div class="input-group">
+                    <label for="Work/Study Hours">Work/Study Hours:</label>
+                    <input type="number" id="Work/Study Hours" placeholder="Enter Hours">
+                </div>
+
+                <div class="input-group">
+                    <label for="Financial Stress">Financial Stress(Scale of 1-5):</label>
+                    <select id="Financial Stress">
                         <option value="1">1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
                     </select>
                 </div>
+
+                <div class="input-group">
+                    <label for="Family History of Mental Illness">Family History of Mental Illness?:</label>
+                    <select id="Family History of Mental Illness">
+                        <option value="0">No</option>
+                        <option value="1">Yes</option>
+                    </select>
+                </div>
+
 
                 <button id="scanButton">Analyze</button>
             </div>
@@ -224,6 +202,6 @@
       </div>
     </main>
 
-    <script src="mc.js"></script>
+    <script src="mental.js"></script>
   </body>
 </html>

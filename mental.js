@@ -29,22 +29,30 @@ async function loadModel() {
 
 // Function to validate input data
 function validateInputs() {
+    const degreeMap = {
+        "MA": 0, "B.Com": 1, "MD": 2, "M.Com": 3, "BE": 4,
+        "MCA": 5, "LLM": 6, "BA": 7, "BCA": 8, "Class 12": 9,
+        "B.Ed": 10, "M.Tech": 11, "LLB": 12, "B.Arch": 13, "ME": 14,
+        "MBA": 15, "BBA": 16, "PhD": 17, "M.Pharm": 18, "MBBS": 19,
+        "BHM": 20, "MHM": 21, "BSc": 22, "MSc": 23, "B.Pharm": 24,
+        "B.Tech": 25, "M.Ed": 26
+    };
+
+    const degreeStr = document.getElementById("Degree").value;
+    const degreeEncoded = degreeMap[degreeStr];
+
     let inputData = [
-        		 			 
-        parseInt(document.getElementById("Sleep").value),
-        parseInt(document.getElementById("Appetite").value),
-        parseInt(document.getElementById("Interest").value),
-        parseInt(document.getElementById("Fatigue").value),
-        parseInt(document.getElementById("Worthlessness").value),
-        parseInt(document.getElementById("Concentration").value),
-        parseInt(document.getElementById("Agitation").value),
-        parseInt(document.getElementById("Suicidal Ideation").value),
-        parseInt(document.getElementById("Sleep Disturbance").value),
-        parseInt(document.getElementById("Aggression").value),
-        parseInt(document.getElementById("Panic Attacks").value),
-        parseInt(document.getElementById("Hopelessness").value),
-        parseInt(document.getElementById("Restlessness").value),
-        parseInt(document.getElementById("Low Energy").value),
+        parseInt(document.getElementById("Gender").value),
+        parseInt(document.getElementById("Age").value),
+        parseInt(document.getElementById("Student or Professional").value),
+        parseInt(document.getElementById("Pressure").value),
+        parseInt(document.getElementById("Sleep Duration").value),
+        parseInt(document.getElementById("Dietary Habits").value),
+        degreeEncoded,
+        parseInt(document.getElementById("Have you ever had suicidal thoughts ?").value),
+        parseInt(document.getElementById("Work/Study Hours").value),
+        parseInt(document.getElementById("Financial Stress").value),
+        parseInt(document.getElementById("Family History of Mental Illness").value)
     ];
 
     // Check if any field is invalid
@@ -58,6 +66,7 @@ function validateInputs() {
     return inputData;
 }
 
+
 // Function to make a prediction
 async function predictHeartDisease(inputData) {
     if (!model) {
@@ -65,13 +74,13 @@ async function predictHeartDisease(inputData) {
         return;
     }
 
-    if (inputData.length !== 14) {
-        console.log("Input data should have exactly 14 features!");
+    if (inputData.length !== 11) {
+        console.log("Input data should have exactly 18 features!");
         return;
     }
 
     // Ensure input is a 2D tensor and force fresh memory allocation
-    const inputTensor = tf.tensor2d([inputData], [1, 14]);
+    const inputTensor = tf.tensor2d([inputData], [1, 11]);
 
     try {
         const prediction = model.predict(inputTensor);
