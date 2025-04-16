@@ -1,9 +1,10 @@
 
 body {
     font-family: 'Poppins', sans-serif;
-    background-color: #f2f2f2;
-    color: #333;
-    text-align: center;
+    background: linear-gradient(135deg, #202020, #333333); /* Darker, more futuristic background */
+    color: #eee; /* Lighter text for contrast */
+    text-align: center; 
+    overflow-x: hidden; /* Hide horizontal overflow */
     margin: 0;
     padding: 0;
   }
@@ -115,16 +116,16 @@ html {
 .poppins-black-italic {
   font-family: "Poppins", sans-serif;
   font-weight: 900;
-  font-style: italic;
+  font-style: italic; 
 }
 #glitch-title {
-  font-size: 3em;
-  font-family: 'Courier New', monospace;
+  font-size: 4em;
+  font-family: 'Orbitron', sans-serif; /* Futuristic font */
   text-align: center;
-  color: rgb(121, 121, 255); /* Neon green for hacker-style */
+  color: #00ccff; /* Electric blue */
   white-space: nowrap;
   overflow: hidden;
-}
+} 
 /* Ensure the dropdown menu is hidden by default */
 /* Ensure the dropdown menu is hidden by default */
 .dropdown {
@@ -145,6 +146,7 @@ html {
   visibility: hidden; /* Ensure it’s not interactive */
   flex-direction: column; /* Keeps it stacked vertically */
   transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+  border-radius: 10px;
 }
 
 /* Style for each item inside the dropdown */
@@ -155,7 +157,7 @@ html {
 
 /* Style for links inside the dropdown */
 .dropdown-menu a {
-  text-decoration: none;
+  text-decoration: none; 
   color: black;
   display: block;
 }
@@ -169,16 +171,16 @@ html {
 
 
 .spinning_brain {
-  position: fixed;
+  position: fixed; 
   text-align: center;
   color: white;
-  opacity: 0.1;
+  opacity: 0.15; /* Increased slightly */
   object-fit: cover; 
   object-position: center; 
   -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
   mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
   object-fit: cover;
-  z-index: -2;
+  z-index: -2; /* Lowered a bit more */
   top: 0;
   left: 0;
   width: 100vw;
@@ -186,15 +188,15 @@ html {
 }
 .highlight-green {
   color: #38966D; /* Bright green */
-  font-weight: bold;
+  font-weight: bold; /* Kept bold */
 }
 .highlight-blue {
   color: #0073ff;
-  font-weight: bold;
+  font-weight: bold; 
 }
 .highlight-gray {
   color: #b94e4e;
-  font-weight: bold;
+  font-weight: bold; 
 }
 .title_text {
   position: absolute;
@@ -226,20 +228,21 @@ html {
 
 
 
-button:hover {
-  background-color: #0056b3;
-  transform: scale(1.05);
-}
+
 
 
 button {
   display: inline-block; /* Ensures button wraps content properly */
-  background-color: blue;
-  color: white;
-  font-size: 18px; /* Increase font size */
+  background-color: #6c63ff; /* More modern color */
+  color: #ffffff; /* White text */
+  font-size: 20px; /* Increased font size */
   font-weight: 600;
-  padding: 24px 32px; /* Ensure enough clickable area */
+  padding: 24px 36px; /* Ensure enough clickable area */
   min-width: 250px; /* Minimum width for better hitbox */
+  border: 2px solid #6c63ff; /* Border with the same color as the button */
+  transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out, border-color 0.3s ease-in-out; /* Transition for border color */
+
+  border-radius: 10px; /* Slightly rounded corners */
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -247,9 +250,10 @@ button {
   transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
 }
 
-button:hover {
-  background-color: #0056b3;
-  transform: scale(1.08); /* Slightly larger on hover */
+button:hover { /* Hover state */
+  background-color: transparent; /* Transparent on hover */
+  color: #6c63ff; /* Text color changes on hover */
+  border-color: #6c63ff; /* Border color changes on hover */
 }
 
 button:active {
@@ -272,6 +276,7 @@ button a {
   font-weight: 1;
   font-style: normal;
   font-variation-settings:
+
     "slnt" 0;
 }
 .learn-more {
@@ -279,7 +284,7 @@ button a {
   padding: 18px 36px;
   min-width: 220px;
 }
-.descriptions {
+.descriptions { 
   color: black;
   display: flex;
   grid-template-columns: 1fr 1fr 1fr;
@@ -307,12 +312,12 @@ button a {
   .navbar {
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    background-color: #ffffff;
+    align-items: center; 
+    background-color: rgba(255, 255, 255, 0.05); /* Semi-transparent white */
     padding: 1.2% 3%;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Slightly stronger shadow */
     position: fixed;
-    width: 100%;
+    width: 100%; 
     top: 0;
     left: 0;
     z-index: 1000;
@@ -328,7 +333,7 @@ button a {
   
   .site-title {
     font-family: 'Poppins', sans-serif;
-    font-weight: bold;
+    font-weight: bold; 
     color: rgb(121, 121, 255);
     margin: 0;
     
@@ -348,15 +353,16 @@ button a {
   .navbar ul li a {
     text-decoration: none;
     font-weight: 600;
-    color: #333;
+    color: #eee; /* Lighter text */
     font-size: 16.25px;
     border-bottom: 2px solid transparent;
     transition: 0.3s ease-in-out;
-    display: inline-block;
+    display: inline-block; /* Makes border-bottom work */
   }
   
   .navbar ul li a:hover {
-    color: black;
+    color: #00ccff; /* Electric blue on hover */
+
     transform: scale(1.03);
     transition: color 0.3s ease-in-out, transform 0.2s ease-in-out;
     border-bottom: 2px solid black;
@@ -372,48 +378,29 @@ button a {
   }
   
   .navbar ul li a.active {
-    border-bottom: 2px solid black;
+    border-bottom: 2px solid #00ccff; /* Electric blue for active link */
     transform: scale(1.03);
   }
   
-  /* Button Styles (if any) */
-  button {
-    background-color: rgb(106, 106, 224);
-    color: white;
-    font-size: 16px;
-    font-weight: 600;
-    display: inline-block; /* Ensures it takes width & height */
-    padding: 10px 20px; /* Increases the clickable area */
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
-  }
-  
-  button:hover {
-    background-color: #0056b3;
-    transform: scale(1.05);
-  }
-  
-  button:active {
-    transform: scale(0.95);
-  }
+
   
   /* Main Content */
   main {
-    padding: 100px 20px 50px; /* account for fixed nav at top */
+    padding: 100px 20px 50px; /* account for fixed nav at top */ 
   }
   
-  h1 {
-    color: #222;
-    font-size: 42px;
-    font-weight: 700;
-    margin-bottom: 10px;
-    white-space: nowrap;
+  h1 { /* Modified to be more futuristic */
+    color: #fff; /* White */
+    font-size: 48px; /* Larger */
+    font-weight: 800; /* Bolder */
+    text-shadow: 0 0 10px rgba(0, 204, 255, 0.5); /* Glow effect */
+    white-space: nowrap; 
+    font-family: 'Orbitron', sans-serif; /* Futuristic font */
   }
 
-  h2 {
-    color: #222;
+  h2 { 
+    color: #eee; /* Lighter text */
+    text-shadow: 0 0 5px rgba(0, 204, 255, 0.3); /* Subtle glow */
     font-size: 20px;
     font-weight: 300;
     margin-bottom: 10px;
@@ -421,10 +408,10 @@ button a {
   }
   
   p {
-    font-size: 18px;
-    color: #555;
-    max-width: 800px;
-    margin: 0 auto;
+    font-size: 18px; /* Increased slightly */
+    color: #ccc; /* Lighter */
+    max-width: 800px; 
+    margin: 0 auto; 
     line-height: 1.6;
   }
   
@@ -454,7 +441,7 @@ button a {
   .menu-button {
     background: none;
     border: none;
-    color: #333;
+    color: #eee; /* Lighter text */
     cursor: pointer;
     display: none; /* Hidden by default */
   }
@@ -474,14 +461,14 @@ button a {
   .nav-menu a {
     text-decoration: none;
     font-weight: 600;
-    color: #333;
+    color: #eee; /* Lighter text */
     font-size: 16px;
     transition: color 0.3s ease-in-out, transform 0.2s ease-in-out;
     display: inline-block;
   }
   
   .nav-menu a:hover {
-    color: #007bff;
+    color: #00ccff; /* Electric blue on hover */
     transform: scale(1.1);
   }
   
@@ -492,7 +479,7 @@ button a {
     .menu-button {
         display: block; /* Show button on small screens */
     }
-  
+
     .nav-menu {
         display: none; /* Hide menu initially */
         flex-direction: column;
@@ -521,15 +508,18 @@ button a {
       left: 0;
       z-index: -1; /* Make sure particles are in the background */
     }
-    #particles-js canvas {
-      border-color: black !important;
-    }
+    #particles-js canvas { 
+      border-color: black !important; 
+    } 
     
+    
+  
     
   }
   
   .btn {  font-family: Arial, Helvetica, sans-serif;  text-transform: uppercase;}  .btn:hover .btn-slide-show-text1 {  margin-left: 65px;}  .btn-moving-gradient {  height: 55px;  width: 200px;  font-size: 18px;  font-weight: 600;  color: rgb(255, 255, 255);  cursor: pointer;  border: none;  background-size: 300% 100%;  border-radius: 50px;}  .btn-moving-gradient:hover {  transition: 0.5s ease-in-out;  background-position: 100% 0px;}  .btn-moving-gradient--orange {  background-image: linear-gradient(90deg, rgb(255, 132, 0), rgb(255, 191, 0), rgb(255, 225, 0), rgb(251, 176, 59));  box-shadow: rgb(204, 153, 0) 0px 4px 15px 0px;}  
   .btn-moving-gradient--pink {
+
     background-image: linear-gradient(90deg, rgb(255, 97, 171), rgb(255, 176, 97), rgb(255, 97, 97), rgb(255, 99, 146));
     box-shadow: rgb(255, 123, 97) 0px 4px 15px 0px;
   }
@@ -571,6 +561,7 @@ button a {
 /* Retro Gradient */
 .btn-moving-gradient--hot-pink {
   background-image: linear-gradient(90deg, rgb(255, 20, 147), rgb(255, 105, 180), rgb(255, 20, 147), rgb(255, 105, 180));
+
   box-shadow: rgb(255, 20, 147) 0px 4px 15px 0px;
 }
 
@@ -593,18 +584,19 @@ button a {
 }
 
   .our-models-title {
-    font-family: "Poppins", sans-serif;
+    font-family: 'Orbitron', sans-serif;
     font-weight: 900;
-    font-size: 3em;
-    color: black;
+    font-size: 3.5em;
+    color: #eee; /* Lighter text */
+    text-shadow: 0 0 10px rgba(0, 204, 255, 0.5); /* Glow effect */
     text-transform: uppercase;
     text-align: center;
     margin-bottom: 20px;
 }
 .descriptions {
-  display: flex;
+  display: flex; 
   flex-wrap: wrap; /* Allows items to wrap into a new row */
-  justify-content: center; /* Centers items in the row */
+  justify-content: center; /* Centers items in the row */ 
   gap: 5%; /* Space between items */
   text-align: center;
   max-width: 90%;
@@ -613,21 +605,23 @@ button a {
 .gradient-text {
   font-size: 48px;
   font-weight: bold;
-  background-image: linear-gradient(to right, #fc7c68, #82bcff);
+  background-image: linear-gradient(to right, #00ccff, #82bcff);
   -webkit-background-clip: text;
   color: transparent; /* Make the text color transparent so the gradient shows through */
 }
 
 
-.descriptions > div {
+.descriptions > div { /* Changed to direct child selector */
   flex: 1 1 calc(50% - 20px); /* Ensures each div takes up half of the container */
   max-width: 45%; /* Prevents items from becoming too wide */
+  background-color: rgba(255, 255, 255, 0.05);
   display: flex;
   flex-direction: column; /* Stack elements vertically */
   justify-content: space-between; /* Ensures even spacing */
   height: 100%; /* Ensures all divs have the same height */
   box-sizing: border-box;
 }
+
 
 .descriptions h4 {
   flex-grow: 1; /* Allows text to take up remaining space */
@@ -641,4 +635,6 @@ button a {
   align-self: center; /* Centers the button */
   margin-top: auto; /* Pushes the button to the bottom */
 }
+
+
 

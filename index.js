@@ -1,26 +1,26 @@
 particlesJS('particles-js', {
   particles: {
     number: {
-      value: 80,
+      value: 100,
       density: {
         enable: true,
-        value_area: 800
+        value_area: 700
       }
     },
     color: {
-      value: '#000000'
+      value: '#ffffff' // Changed to white for a lighter effect
     },
     shape: {
-      type: 'circle',
+      type: 'circle', // Kept as circles, but can be changed to 'polygon' for hexagons
       stroke: {
-        width: 0
+        width: 0,
       }
     },
     opacity: {
-      value: 0.5,
+      value: 0.7, // Increased base opacity for better visibility
       random: true,
       anim: {
-        enable: true,
+        enable: true, 
         speed: 1.5,
         opacity_min: 0.1,
         sync: false
@@ -32,15 +32,15 @@ particlesJS('particles-js', {
       anim: {
         enable: true,
         speed: 4,
-        size_min: 0.1,
+        size_min: 0.3, // Slightly larger minimum size
         sync: false
       }
     },
     line_linked: {
-      enable: true,
-      distance: 150,
-      color: '#000000',
-      opacity: 0.5,
+      enable: true, 
+      distance: 130, // Slightly reduced distance
+      color: '#ffffff', // Changed line color to white
+      opacity: 0.4, // Reduced line opacity
       width: 2
     },
     move: {
@@ -48,12 +48,12 @@ particlesJS('particles-js', {
       speed: 2,
       direction: 'none',
       random: true,
-      straight: false,
+      straight: false, 
       out_mode: 'out',
       attract: {
         enable: false
       }
-    }
+    },
   },
   interactivity: {
     detect_on: 'window',
@@ -70,12 +70,12 @@ particlesJS('particles-js', {
     modes: {
       repulse: {
         distance: 100,
-        duration: 0.4
+        duration: 0.4,
       },
       push: {
         particles_nb: 4
       }
-    }
+    },
   },
   retina_detect: true
 });
@@ -113,7 +113,7 @@ function revealText() {
     if (i > targetText.length) {
       clearInterval(interval);
       glitchTitle.innerText = targetText;
-    }
+    } 
   }, 100);
 }
 
@@ -123,18 +123,18 @@ window.onload = () => {
 };
 document.querySelectorAll(".dropdown").forEach((dropdown) => {
   dropdown.addEventListener("mouseenter", function () {
-    this.querySelector(".dropdown-menu").style.display = "block";
+    this.querySelector(".dropdown-menu").style.display = "block"; 
     this.querySelector(".dropdown-menu").style.opacity = 0;
-    setTimeout(() => {
+    setTimeout(() => { 
       this.querySelector(".dropdown-menu").style.opacity = 1;
-    }, 10);
-  });
+    }, 10); 
+  }); 
 
   dropdown.addEventListener("mouseleave", function () {
     this.querySelector(".dropdown-menu").style.opacity = 0;
     setTimeout(() => {
       this.querySelector(".dropdown-menu").style.display = "none";
-    }, 200);
+    }, 200); 
   });
 });
 
