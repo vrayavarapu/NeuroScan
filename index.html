@@ -13,9 +13,9 @@
     <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
     
   </head>
-  <body style="background-color: black;"> 
+  <body> 
     <!-- Navigation Bar -->
-<!-- Navigation Bar -->
+
 <div id="particles-js"></div>
   <nav class="navbar">
     <div class="nav-left">
@@ -23,7 +23,7 @@
             <!-- Dropdown Parent -->
             <li><a href="index.html" style="color: white;" >NeuroScan</a></li>
             <li class="dropdown">
-              <a href="index.html" style="color: white;">Our Cancer Models</a>
+              <a href="index.html" style="color: black;">Our Cancer Models</a>
               <ul class="dropdown-menu">
                   <li><a href="tumor.html">Brain Tumor Scan</a></li>
                   <li><a href="breastcancer.html">Breast Cancer Scan</a></li>
@@ -33,7 +33,7 @@
 
               </ul>
             <li><li class="dropdown">
-              <a href="index.html" >Our Disease Models</a>
+              <a href="index.html" style="color: black;" >Our Disease Models</a>
               <ul class="dropdown-menu">
                   <li><a href="pneumonia.html">Pneumonia Scan</a></li>
                   <li><a href="covid19.html">Covid Scan</a></li>
@@ -43,7 +43,7 @@
               </ul>
             </li>
             <li class="dropdown">
-              <a href="index.html" >Our Other Models</a>
+              <a href="index.html" style="color: black;">Our Other Models</a>
               <ul class="dropdown-menu">
                   <li><a href="dementia.html">Dementia Scan</a></li>
                   <li><a href="mental.html">Depression Scan</a></li>
@@ -62,14 +62,11 @@
     <main>
       <div class="hero">
       <div class="hero-content">
-        <img src="glowBrainCrop.gif" alt="Animated Brain" class="hero-image" />
+        <img src="glowBrainCrop.gif" alt="Animated Brain" class="hero-image" id="brain-background"/>
           <div class="hero-text">
-            <h1 class="hero-title" style="color: white;">NeuroScan</h1>
-            <h2 class="hero-subtitle" style="color: white;">Smarter scans. Faster diagnoses. Longer lives.</h2>
-            <button class="hero-button btn-moving-gradient btn-moving-gradient--purple"><a href="#descriptions">Learn More</a></button>
       </div>
           <div class="title_text">
-            <h1><img style="padding-left: 50px;padding-right: 50px" src="Neuroscan_title.png" alt="Image" class="large-image"></h1>
+            <h1><img src="Neuroscan_title.png" alt="Image" class="large-image"></h1>
             <h2 class = "gradient-text" style="font-size:2.3em;" > Smarter scans. Faster diagnoses. Longer lives.</h2>
             <button class="btn btn-moving-gradient btn-moving-gradient--purple"><a href="#descriptions">Learn More</a></button>
           </div>
@@ -84,7 +81,7 @@
           <div class="descriptions">
 
             <div class="brain_tumor">
-              <button class="btn btn-moving-gradient btn-moving-gradient--orange"><a href="tumor.html"> Brain Scan</a></button>
+              <button class="btn btn-moving-gradient btn-moving-gradient--orange"><a href="tumor.html">Brain Scan</a></button>
               <h4><strong>Brain tumors</strong> are abnormal growths of cells in the brain that can be 
                 either harmless or cancerous. They can lead 
                 to serious health complications, such as increased intracranial pressure, 
@@ -97,7 +94,7 @@
               <button class="btn btn-moving-gradient btn-moving-gradient--pink"><a href="breastcancer.html"> Breast Scan </a> </button>
             <h4>
               <strong>Breast cancer</strong> is a type of cancer that begins in the cells of the breast, 
-              often presenting as a lump or change in breast tissue. 
+              often presenting as a lump or change in the breast tissue. 
               It can spread to other parts of the body if not detected early, 
               leading to serious health complications, but with early detection and 
               treatment, the prognosis is often more favorable. This scan will require an image of a breast MRI.
@@ -106,7 +103,7 @@
           </div> 
 
             <div class="lung_cancer">
-              <button class="btn btn-moving-gradient btn-moving-gradient--blue"> <a href="lungcancer.html">Lung Scan</a> </button>
+              <button class="btn btn-moving-gradient btn-moving-gradient--blue"><a href="lungcancer.html">Lung Scan</a></button>
               <h4><strong>Lung cancer</strong> is a type of cancer that begins in the lungs, 
                 often caused by smoking or exposure to harmful substances. 
                 It can lead to symptoms like persistent cough, difficulty breathing, 
@@ -118,7 +115,7 @@
             </div> 
 
             <div class="lung_cancer">
-              <button class="btn btn-moving-gradient btn-moving-gradient--green"> <a href="bonecancer.html">Bone Scan</a> </button>
+              <button class="btn btn-moving-gradient btn-moving-gradient--green"><a href="bonecancer.html">Bone Scan</a></button>
               <h4><strong>Bone Cancer</strong> is a type of cancer that begins in the cells of the bone, often causing pain, swelling, 
                 or fractures. It can spread to other parts of the body if not treated early, leading to serious complications, but with early 
                 diagnosis and treatments like surgery, chemotherapy, or radiation, the prognosis can improve.
@@ -129,7 +126,7 @@
             </div>
 
             <div class="lung_cancer">
-              <button class="btn btn-moving-gradient btn-moving-gradient--red"> <a href="pneumonia.html">Pneumonia Scan</a> </button>
+              <button class="btn btn-moving-gradient btn-moving-gradient--red"><a href="pneumonia.html">Pneumonia Scan</a></button>
               <h4><strong>Pneumonia</strong> is an infection that inflames the air sacs in one or both lungs, often caused by bacteria, 
                 viruses, or fungi. It can lead to symptoms like cough, fever, difficulty breathing, chest pain, and fatigue. In severe cases, pneumonia 
                 can cause complications such as respiratory failure or sepsis, making it a potentially life-threatening condition if not diagnosed 
@@ -140,7 +137,7 @@
              
              
             <div class="lung_cancer">
-              <button class="btn btn-moving-gradient btn-moving-gradient--black"> <a href="dementia.html">Dementia Scan</a> </button>
+              <button class="btn btn-moving-gradient btn-moving-gradient--black"><a href="dementia.html">Dementia Scan</a></button>
               <h4><strong>Dementia</strong>  is a neurological disorder that affects memory, thinking, and daily functioning, 
                 often caused by diseases like Alzheimer's. It can lead to symptoms such as confusion, difficulty with communication, mood changes, and loss of independence. 
                 As the condition progresses, it can severely impact quality of life and require full-time care. 
@@ -150,7 +147,7 @@
             </div>
 
             <div class="lung_cancer">
-              <button class="btn btn-moving-gradient btn-moving-gradient--teal"> <a href="kidneycancer.html">Kidney Scan</a> </button>
+              <button class="btn btn-moving-gradient btn-moving-gradient--teal"><a href="kidneycancer.html">Kidney Scan</a></button>
               <h4><strong>Kidney cancer</strong> is a type of cancer that begins in the kidneys, often linked to risk factors like 
                 smoking, obesity, and high blood pressure. It can cause symptoms such as blood in the urine, lower back pain, fatigue, 
                 and unexplained weight loss, and may spread to other parts of the body. If not detected and treated early, it can become life-threatening. 
@@ -160,7 +157,7 @@
             </div>
 
             <div class="lung_cancer">
-              <button class="btn btn-moving-gradient btn-moving-gradient--sand"> <a href="covid19.html">Covid Scan</a> </button>
+              <button class="btn btn-moving-gradient btn-moving-gradient--sand"><a href="covid19.html">Covid Scan</a></button>
               <h4><strong>Covid 19</strong> is a viral infection caused by SARS-CoV-2, primarily affecting the respiratory system. 
                 Symptoms range from mild (fever, cough) to severe (pneumonia, respiratory failure). It spreads through respiratory droplets 
                 and can lead to complications like organ damage. Early diagnosis and treatments, including antivirals, oxygen therapy, and supportive care, improve outcomes.
@@ -171,7 +168,7 @@
             </div>
 
             <div class="lung_cancer">
-              <button class="btn btn-moving-gradient btn-moving-gradient--hot-pink"> <a href="heart.html">Heart Scan</a> </button>
+              <button class="btn btn-moving-gradient btn-moving-gradient--hot-pink"><a href="heart.html">Heart Scan</a></button>
               <h4><strong>Heart Disease</strong> is a broad term for conditions affecting the heart, including coronary artery disease, 
                 heart failure, and arrhythmias. Symptoms may include chest pain, shortness of breath, and fatigue. It can lead to severe 
                 complications like heart attacks or stroke. Risk factors include high blood pressure, cholesterol, and lifestyle habits. 
@@ -182,7 +179,7 @@
             </div>
 
             <div class="lung_cancer">
-              <button class="btn btn-moving-gradient btn-moving-gradient--deep-blue"> <a href="prostate.html">Prostate Scan</a> </button>
+              <button class="btn btn-moving-gradient btn-moving-gradient--deep-blue"><a href="prostate.html">Prostate Scan</a></button>
               <h4><strong>Prostate Cancer</strong> is a malignancy in the prostate gland, often growing slowly but sometimes aggressively spreading. 
                 Symptoms may include difficulty urinating, blood in urine, or pelvic pain. Risk factors include age, genetics, and diet. 
                 Diagnosis typically requires a PSA blood test, biopsy, or MRI.
@@ -192,7 +189,7 @@
             </div>
 
             <div class="lung_cancer">
-              <button class="btn btn-moving-gradient btn-moving-gradient--oranger"> <a href="mc.html">MC Scan</a> </button>
+              <button class="btn btn-moving-gradient btn-moving-gradient--oranger"><a href="mc.html">MC Scan</a></button>
               <h4><strong>Multiple Schlerosis</strong> is a chronic autoimmune disease that damages the protective covering of nerves in the brain and spinal cord. 
                 Symptoms vary but may include vision problems, muscle weakness, and coordination issues. 
                 It can lead to disability over time. Diagnosis involves MRI, spinal fluid analysis, and neurological exams.
@@ -202,7 +199,7 @@
             </div>
 
             <div class="lung_cancer">
-              <button class="btn btn-moving-gradient btn-moving-gradient--purpal"> <a href="diabetes.html">Diabetes Scan</a> </button>
+              <button class="btn btn-moving-gradient btn-moving-gradient--purpal"><a href="diabetes.html">Diabetes Scan</a></button>
               <h4><strong>Diabetes</strong> is a metabolic disorder characterized by high blood sugar levels due to insulin resistance 
                 (Type 2) or inadequate insulin production (Type 1). Symptoms include excessive thirst, frequent urination, and fatigue. 
                 Long-term complications include nerve damage, kidney disease, and cardiovascular issues. Diagnosis is through blood tests
