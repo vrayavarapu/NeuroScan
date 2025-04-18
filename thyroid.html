@@ -21,7 +21,7 @@
         <ul>  
             <li><a href="index.html" style="color: rgb(106, 106, 224);" >NeuroScan</a></li>
             <li class="dropdown">
-              <a href="mental.html" >Our Cancer Models</a>
+              <a href="thyroid.html" class="active">Our Cancer Models</a>
               <ul class="dropdown-menu">
                   <li><a href="tumor.html">Brain Tumor Scan</a></li>
                   <li><a href="breastcancer.html">Breast Cancer Scan</a></li>
@@ -29,9 +29,10 @@
                   <li><a href="kidneycancer.html">Kidney Cancer Scan</a></li>
                   <li><a href="lungcancer.html">Lung Cancer Scan</a></li>
                   <li><a href="thyroid.html">Thyroid Cancer Scan</a></li>
+
               </ul>
             <li><li class="dropdown">
-              <a href="mental.html">Our Disease Models</a>
+              <a href="thyroid.html">Our Disease Models</a>
               <ul class="dropdown-menu">
                   <li><a href="pneumonia.html">Pneumonia Scan</a></li>
                   <li><a href="covid19.html">Covid Scan</a></li>
@@ -41,7 +42,7 @@
               </ul>
             </li>
             <li class="dropdown">
-              <a href="mental.html" class="active">Our Cognitive Models</a>
+              <a href="thyroid.html" >Our Cognitive Models</a>
               <ul class="dropdown-menu">
                   <li><a href="dementia.html">Dementia Scan</a></li>
                   <li><a href="mental.html">Depression Scan</a></li>
@@ -60,7 +61,7 @@
         <!-- Left Column -->
         <div class="left-content">
             <br></br> 
-              <h1 class="tumor-scanner-title">Mental Health Scanner</h1>
+              <h1 class="tumor-scanner-title">Thyroid Scanner</h1>
               <h1 style = "font-size:2em">Helping <strong> <span class="highlight-green">You</span> </strong> Is Our Pleasure.</h1>              
               <p>
                   Since creating AI Scanning, NeuroScan incorporates the latest verified research to detect tumors more effectively.
@@ -74,6 +75,12 @@
             <div class="input-box">
                 <h2>Enter Patient Data</h2>
 
+               
+                <div class="input-group">
+                    <label for="Age">Age:</label>
+                    <input type="number" id="Age" placeholder="Enter Age">
+                </div>
+
                 <div class="input-group">
                 <label for="Gender">Gender:</label>
                 <select id="Gender">
@@ -83,111 +90,100 @@
                 </div>
 
                 <div class="input-group">
-                    <label for="Age">Age:</label>
-                    <input type="number" id="Age" placeholder="Enter Age">
-                </div>
-
-                <div class="input-group">
-                    <label for="Student or Professional">Student or Professional:</label>
-                    <select id="Student or Professional">
-                        <option value="0">Student</option>
-                        <option value="1">Professional</option>
+                    <label for="Country">Country:</label>
+                    <select id="Country">
+                        <option value=0>USA</option>
+                        <option value=1>Russia</option>
+                        <option value=2>India</option>
+                        <option value=3>Germany</option>
+                        <option value=4>Nigeria</option>
+                        <option value=5>Japan</option>
+                        <option value=6>Brazil</option>
+                        <option value=7>South Korea</option>
+                        <option value=8>China</option>
+                        <option value=9>United Kingdom</option>
+                        <option value=4>Other</option>
                     </select>
                 </div>
 
                 <div class="input-group">
-                    <label for="Pressure">Pressure(scale of 1-5):</label>
-                    <select id="Pressure">
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
+                    <label for="Ethnicity">Ethnicity:</label>
+                    <select id="Ethnicity">
+                        <option value=0>White</option>
+                        <option value=1>Hispanic</option>
+                        <option value=2>Asian</option>
+                        <option value=3>African</option>
+                        <option value=4>Middle-Eastern</option>
+                        <option value=4>Other</option>
                     </select>
                 </div>
 
                 <div class="input-group">
-                    <label for="Sleep Duration">Sleep Duration:</label>
-                    <select id="Sleep Duration">
-                        <option value="0">below 5 hours</option>
-                        <option value="1">5-6 hours</option>
-                        <option value="2">7-8 hours</option>
-                        <option value="3">8+ hours</option>
+                    <label for="Family_History">Family History of Thyroid Cancer:</label>
+                    <select id="Family_History">
+                        <option value=0>No</option>
+                        <option value=1>Yes</option>
                     </select>
                 </div>
 
                 <div class="input-group">
-                    <label for="Dietary Habits">Dietary Habits:</label>
-                    <select id="Dietary Habits">
-                        <option value="0">Healthy</option>
-                        <option value="1">Moderate</option>
-                        <option value="2">Unhealthy</option>
+                    <label for="Radiation_Exposure">Radiation Exposure:</label>
+                    <select id="Radiation_Exposure">
+                        <option value=0>No</option>
+                        <option value=1>Yes</option>
                     </select>
                 </div>
 
                 <div class="input-group">
-                    <label for="Degree">Degree Type:</label>
-                    <select id="Degree">
-                        <option value="MA">MA</option>
-                        <option value="B.Com">B.Com</option>
-                        <option value="MD">MD</option>
-                        <option value="M.Com">M.Com</option>
-                        <option value="BE">BE</option>
-                        <option value="MCA">MCA</option>
-                        <option value="LLM">LLM</option>
-                        <option value="BA">BA</option>
-                        <option value="BCA">BCA</option>
-                        <option value="Class 12">Class 12</option>
-                        <option value="B.Ed">B.Ed</option>
-                        <option value="M.Tech">M.Tech</option>
-                        <option value="LLB">LLB</option>
-                        <option value="B.Arch">B.Arch</option>
-                        <option value="ME">ME</option>
-                        <option value="MBA">MBA</option>
-                        <option value="BBA">BBA</option>
-                        <option value="PhD">PhD</option>
-                        <option value="M.Pharm">M.Pharm</option>
-                        <option value="MBBS">MBBS</option>
-                        <option value="BHM">BHM</option>
-                        <option value="MHM">MHM</option>
-                        <option value="BSc">BSc</option>
-                        <option value="MSc">MSc</option>
-                        <option value="B.Pharm">B.Pharm</option>
-                        <option value="B.Tech">B.Tech</option>
-                        <option value="M.Ed">M.Ed</option>
+                    <label for="Iodine_Deficiency">Iodine Deficiency:</label>
+                    <select id="Iodine_Deficiency">
+                        <option value=0>No</option>
+                        <option value=1>Yes</option>
                     </select>
                 </div>
 
                 <div class="input-group">
-                    <label for="Have you ever had suicidal thoughts ?">Suicidal Thoughts:</label>
-                    <select id="Have you ever had suicidal thoughts ?">
-                        <option value="0">No</option>
-                        <option value="1">Yes</option>
+                    <label for="Smoking">Smoking History:</label>
+                    <select id="Smoking">
+                        <option value=0>No</option>
+                        <option value=1>Yes</option>
                     </select>
                 </div>
 
                 <div class="input-group">
-                    <label for="Work/Study Hours">Work/Study Hours:</label>
-                    <input type="number" id="Work/Study Hours" placeholder="Enter Hours">
-                </div>
-
-                <div class="input-group">
-                    <label for="Financial Stress">Financial Stress(Scale of 1-5):</label>
-                    <select id="Financial Stress">
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
+                    <label for="Obesity">Obesity:</label>
+                    <select id="Obesity">
+                        <option value=0>No</option>
+                        <option value=1>Yes</option>
                     </select>
                 </div>
 
                 <div class="input-group">
-                    <label for="Family History of Mental Illness">Family History of Mental Illness?:</label>
-                    <select id="Family History of Mental Illness">
-                        <option value="0">No</option>
-                        <option value="1">Yes</option>
+                    <label for="Diabetes">Diabetes:</label>
+                    <select id="Diabetes">
+                        <option value=0>No</option>
+                        <option value=1>Yes</option>
                     </select>
+                </div>
+
+                <div class="input-group">
+                    <label for="TSH_Level">TSH Level:</label>
+                    <input type="number" id="TSH_Level" placeholder="Enter TSH Level">
+                </div>
+
+                <div class="input-group">
+                    <label for="T3_Level">T3 Level:</label>
+                    <input type="number" id="T3_Level" placeholder="Enter T3 Level">
+                </div>
+                
+                <div class="input-group">
+                    <label for="T4_Level">T4 Level:</label>
+                    <input type="number" id="T4_Level" placeholder="Enter T4 Level">
+                </div>
+
+                <div class="input-group">
+                    <label for="Nodule_Size">Nodule Size:</label>
+                    <input type="number" id="Nodule_Size" placeholder="Enter Nodule Size">
                 </div>
 
 
@@ -203,6 +199,6 @@
       </div>
     </main>
 
-    <script src="mental.js"></script>
+    <script src="thyroid.js"></script>
   </body>
 </html>
