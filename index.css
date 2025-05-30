@@ -1,16 +1,235 @@
-
 body {
-    font-family: 'Poppins', sans-serif;
-    background-color: #f2f2f2;
-    color: #333;
-    text-align: center;
-    margin: 0;
-    padding: 0;
-  }
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: #0a0a0a;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  background-color: #f2f2f2;
+  z-index: 1;
+  position: relative; /* important */
+}
+/*
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  font-family: 'Arial', sans-serif;
+}
+*/
+.container {
+  width: 100%;
+  max-width: 800px;
+  position: relative;
+  overflow: hidden;
+  margin: 0 auto; /* Center the container */
+}
+
+svg {
+  width: 100%;
+  height: 150px;
+}
+
+.pulse-line {
+  stroke: rgb(121,121,255);
+  stroke-width: 3;
+  fill: none;
+  filter: drop-shadow(0 0 8px rgba(121, 121, 255, 0.7));
+}
+
+.pulse-marker {
+  fill: rgb(121,121,255);
+  filter: drop-shadow(0 0 8px rgba(121,121,255, 0.7));
+}
+
+.grid {
+  stroke: rgba(0, 255, 157, 0.15);
+  stroke-width: 0;
+}
+
+#titleContainer {
+  opacity: 0;
+}
+
+.background-gif {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* Add a background color that matches the main color of your GIF */
+  background-color: #f2f2f2; /* Change to match your GIF's main color */
+  background-image: url('realbackground.gif');
+  background-repeat: repeat;
+  background-size: auto;
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* Particles.js background positioning */
+#particles-js {
+  position: fixed;
+  width: 100%; 
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: -1; /* Behind everything */
+}
+
+#particles-js canvas { 
+  border-color: black !important;
+} 
+  
 html {
     scroll-behavior: smooth;
-
 }
+
+@font-face {
+  font-family: 'GeneralSans-Extralight';
+  src: url('../fonts/GeneralSans-Extralight.woff2') format('woff2'),
+       url('../fonts/GeneralSans-Extralight.woff') format('woff'),
+       url('../fonts/GeneralSans-Extralight.ttf') format('truetype');
+  font-weight: 200;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'GeneralSans-ExtralightItalic';
+  src: url('../fonts/GeneralSans-ExtralightItalic.woff2') format('woff2'),
+       url('../fonts/GeneralSans-ExtralightItalic.woff') format('woff'),
+       url('../fonts/GeneralSans-ExtralightItalic.ttf') format('truetype');
+  font-weight: 200;
+  font-display: swap;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'GeneralSans-Light';
+  src: url('../fonts/GeneralSans-Light.woff2') format('woff2'),
+       url('../fonts/GeneralSans-Light.woff') format('woff'),
+       url('../fonts/GeneralSans-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'GeneralSans-LightItalic';
+  src: url('../fonts/GeneralSans-LightItalic.woff2') format('woff2'),
+       url('../fonts/GeneralSans-LightItalic.woff') format('woof'),
+       url('../fonts/GeneralSans-LightItalic.ttf') format('truetype');
+  font-weight: 300;
+  font-display: swap;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'GeneralSans-Regular';
+  src: url('../fonts/GeneralSans-Regular.woff2') format('woff2'),
+       url('../fonts/GeneralSans-Regular.woff') format('woff'),
+       url('../fonts/GeneralSans-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'GeneralSans-Italic';
+  src: url('../fonts/GeneralSans-Italic.woff2') format('woff2'),
+       url('../fonts/GeneralSans-Italic.woff') format('woff'),
+       url('../fonts/GeneralSans-Italic.ttf') format('truetype');
+  font-weight: 400;
+  font-display: swap;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'GeneralSans-Medium';
+  src: url('../fonts/GeneralSans-Medium.woff2') format('woff2'),
+       url('../fonts/GeneralSans-Medium.woff') format('woff'),
+       url('../fonts/GeneralSans-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'GeneralSans-MediumItalic';
+  src: url('../fonts/GeneralSans-MediumItalic.woff2') format('woff2'),
+       url('../fonts/GeneralSans-MediumItalic.woff') format('woff'),
+       url('../fonts/GeneralSans-MediumItalic.ttf') format('truetype');
+  font-weight: 500;
+  font-display: swap;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'GeneralSans-Semibold';
+  src: url('../fonts/GeneralSans-Semibold.woff2') format('woff2'),
+       url('../fonts/GeneralSans-Semibold.woff') format('woff'),
+       url('../fonts/GeneralSans-Semibold.ttf') format('truetype');
+  font-weight: 600;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'GeneralSans-SemiboldItalic';
+  src: url('../fonts/GeneralSans-SemiboldItalic.woff2') format('woff2'),
+       url('../fonts/GeneralSans-SemiboldItalic.woff') format('woff'),
+       url('../fonts/GeneralSans-SemiboldItalic.ttf') format('truetype');
+  font-weight: 600;
+  font-display: swap;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'GeneralSans-Bold';
+  src: url('../fonts/GeneralSans-Bold.woff2') format('woff2'),
+       url('../fonts/GeneralSans-Bold.woff') format('woff'),
+       url('../fonts/GeneralSans-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'GeneralSans-BoldItalic';
+  src: url('../fonts/GeneralSans-BoldItalic.woff2') format('woff2'),
+       url('../fonts/GeneralSans-BoldItalic.woff') format('woff'),
+       url('../fonts/GeneralSans-BoldItalic.ttf') format('truetype');
+  font-weight: 700;
+  font-display: swap;
+  font-style: italic;
+}
+/**
+* This is a variable font
+* You can control variable axes as shown below:
+* font-variation-settings: wght 700.0;
+*
+* available axes:
+'wght' (range from 200.0 to 700.0
+*/
+@font-face {
+  font-family: 'GeneralSans-Variable';
+  src: url('../fonts/GeneralSans-Variable.woff2') format('woff2'),
+       url('../fonts/GeneralSans-Variable.woff') format('woff'),
+       url('../fonts/GeneralSans-Variable.ttf') format('truetype');
+  font-weight: 200 700;
+  font-display: swap;
+  font-style: normal;
+}
+/**
+* This is a variable font
+* You can control variable axes as shown below:
+* font-variation-settings: wght 700.0;
+*
+* available axes:
+'wght' (range from 200.0 to 700.0
+*/
+@font-face {
+  font-family: 'GeneralSans-VariableItalic';
+  src: url('../fonts/GeneralSans-VariableItalic.woff2') format('woff2'),
+       url('../fonts/GeneralSans-VariableItalic.woff') format('woff'),
+       url('../fonts/GeneralSans-VariableItalic.ttf') format('truetype');
+  font-weight: 200 700;
+  font-display: swap;
+  font-style: italic;
+}
+
+
 .poppins-thin {
   font-family: "Poppins", sans-serif;
   font-weight: 100;
@@ -127,6 +346,7 @@ html {
   overflow: hidden;
 } 
 
+
 /* Ensure the dropdown menu is hidden by default */
 .dropdown {
   position: relative; /* Needed for absolute positioning of the dropdown menu */
@@ -143,7 +363,7 @@ html {
   min-width: 150px;
   z-index: 100;
   opacity: 0; /* Make it fully transparent when not visible */
-  visibility: hidden; /* Ensure it’s not interactive */
+  visibility: hidden; /* Ensure it's not interactive */
   flex-direction: column; /* Keeps it stacked vertically */
   transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
 }
@@ -168,7 +388,7 @@ html {
   opacity: 1;
 }
 
-
+/*
 .spinning_brain {
   position: fixed;
   color: #fff;
@@ -178,12 +398,13 @@ html {
   -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
   mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
   object-fit: cover;
-  z-index: -2; /* Lowered a bit more */
+  z-index: -2; // Lowered a bit more 
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
 }
+*/
 .highlight-green {
   color: #38966D;
   font-weight: bold;
@@ -197,18 +418,26 @@ html {
   font-weight: bold;
 } 
 .title_text {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-
-  /*
-  border: solid 5px #7979ff; /* Purple border */
-  padding-left: 10%;
-  padding-right: 10%;
-  padding-bottom: 10%;
-  pointer-events: none;
+  /* Remove absolute positioning */
+  position: relative;
+  margin: 0 auto;
+  padding-top: 60px; /* Reduced top padding to accommodate animation */
+  padding-bottom: 100px; /* Reduced bottom padding */
+  text-align: center;
+  width: 80%;
+  max-width: 1200px;
+  z-index: 10; /* Ensure title appears above particles */
   
+  /* Add flexbox centering for all child elements */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hero-text {
+  position: relative; /* Not absolute */
+  width: 100%;
+  z-index: 10; /* Ensure hero text appears above particles */
 }
 .large-image {
     width: 500px;  /* Specify a fixed width */
@@ -226,28 +455,33 @@ html {
 
 
 
-button {
-  display: inline-block; /* Ensures button wraps content properly */
+.button {
+  display: inline-block;
   background-color: blue;
   color: white;
-  font-size: 18px; /* Increase font size */
+  font-size: 18px;
   font-weight: 600;
-  padding: 24px 32px; /* Ensure enough clickable area */
-  min-width: 250px; /* Minimum width for better hitbox */
+  padding: 24px 32px;
+  min-width: 250px;
+  min-height: 60px;
+  text-align: center;
+  line-height: 1.5;
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  z-index: 10;
+  text-decoration: none;
   transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
 }
 
-button:hover { /* Hover state */
-  background-color: #605bd4; /* Darker purple on hover */
-  color: white;
+.button:hover {
+  background-color: #605bd4;
 }
 
-button:active {
+.button:active {
   transform: scale(0.95);
 }
+
 
 button a {
   text-decoration: none;
@@ -270,6 +504,14 @@ button a {
   font-size: 20px;
   padding: 18px 36px;
   min-width: 220px;
+}
+#descriptions {
+  padding-top: 50px; /* Adds space above the descriptions section */
+  margin-top: 30px;
+  clear: both; /* Ensures it starts below any floating elements */
+  display: block;
+  position: relative;
+  z-index: 10; /* Ensure descriptions appear above particles */
 }
 .descriptions { 
   color: black;
@@ -307,7 +549,7 @@ button a {
     width: 100%; 
     top: 0;
     left: 0;
-    z-index: 1000;
+    z-index: 1000; /* Navbar stays above everything */
   }
   
   .nav-left {
@@ -371,6 +613,9 @@ button a {
   /* Main Content */
   main {
     padding: 100px 20px 50px; /* account for fixed nav at top */ 
+    position: relative;
+    padding-top: 80px; 
+    z-index: 5; /* Ensure main content appears above particles */
   }
   
   h1 {
@@ -379,6 +624,8 @@ button a {
     font-weight: 700;
     margin-bottom: 10px;
     white-space: nowrap;
+    position: relative;
+    z-index: 10; /* Ensure h1 appears above particles */
   }
 
   h2 { 
@@ -387,6 +634,8 @@ button a {
     font-weight: 300;
     margin-bottom: 10px;
     white-space: nowrap;
+    position: relative;
+    z-index: 10; /* Ensure h2 appears above particles */
   }
 
   p {
@@ -482,96 +731,183 @@ button a {
     .nav-menu li {
         margin: 10px 0;
     }
-    #particles-js {
-      position: fixed;
-      width: 100%; 
-      height: 100%;
-      top: 0;
-      left: 0;
-      z-index: -1;
-    }
-    #particles-js canvas { 
-      border-color: black !important;
-    } 
-    
-    
-  
     
   }
   
-  .btn {  font-family: Arial, Helvetica, sans-serif;  text-transform: uppercase;}  .btn:hover .btn-slide-show-text1 {  margin-left: 65px;}  .btn-moving-gradient {  height: 55px;  width: 200px;  font-size: 18px;  font-weight: 600;  color: rgb(255, 255, 255);  cursor: pointer;  border: none;  background-size: 300% 100%;  border-radius: 50px;}  .btn-moving-gradient:hover {  transition: 0.5s ease-in-out;  background-position: 100% 0px;}  .btn-moving-gradient--orange {  background-image: linear-gradient(90deg, rgb(255, 132, 0), rgb(255, 191, 0), rgb(255, 225, 0), rgb(251, 176, 59));  box-shadow: rgb(204, 153, 0) 0px 4px 15px 0px;}  
-  .btn-moving-gradient--pink {
+  /* Updated gradient button styles with proper centering and full clickable area */
+/* Updated gradient button styles with proper centering and full clickable area */
+/* Updated gradient button styles with proper centering and full clickable area */
+.btn {  
+  font-family: Arial, Helvetica, sans-serif;  
+  text-transform: uppercase;
+}
 
-    background-image: linear-gradient(90deg, rgb(255, 97, 171), rgb(255, 176, 97), rgb(255, 97, 97), rgb(255, 99, 146));
-    box-shadow: rgb(255, 123, 97) 0px 4px 15px 0px;
-  }
-  .btn-moving-gradient--blue {
-    background-image: linear-gradient(90deg, rgb(61, 135, 255), rgb(190, 61, 255), rgb(126, 61, 255), rgb(58, 134, 255));
-    box-shadow: rgb(190, 61, 255) 0px 4px 15px 0px;
-  }
-  .btn-moving-gradient--green {
-    background-image: linear-gradient(90deg, rgb(3, 197, 113), rgb(164, 255, 61), rgb(158, 231, 105), rgb(3, 197, 113));
-    box-shadow: rgb(164, 255, 61) 0px 4px 15px 0px;
-  }
-  .btn-moving-gradient--purple {
-    background-image: linear-gradient(90deg, rgb(91, 91, 230), rgb(121, 121, 255), rgb(171, 121, 255), rgb(91, 91, 230));
-    box-shadow: rgba(121, 121, 255, 0.5) 0px 4px 15px 0px;
-  }
-  .btn-moving-gradient--gold {
-    background-image: linear-gradient(90deg, #6FD670, rgb(13, 158, 71), #38966D, #6FD670);
-    box-shadow: rgba(13, 158, 71) 0px 4px 15px 0px;
-  }
-  .btn-moving-gradient--red {
-    background-image: linear-gradient(90deg, #d95b5b, rgb(188, 67, 113), #c45cae, #d95b5b);
-    box-shadow: rgba(188, 67, 113) 0px 4px 15px 0px;
-  }
-  .btn-moving-gradient--black {
-    background-image: linear-gradient(90deg, #1e1c26, rgb(26, 25, 54), #2d3763, #1e1c26);
-    box-shadow: rgba(26, 25, 54) 0px 4px 15px 0px;
-  }
-  .btn-moving-gradient--teal {
-    background-image: linear-gradient(90deg, rgb(0, 176, 255), rgb(0, 232, 176), rgb(0, 140, 255), rgb(0, 210, 255));
-    box-shadow: rgb(0, 140, 255) 0px 4px 15px 0px;
-  }
-  .btn-moving-gradient--sand {
-    background-image: linear-gradient(90deg, rgb(255, 160, 180), rgb(255, 200, 150), rgb(244, 169, 48), rgb(255, 160, 180) ) ;
-    box-shadow: rgba(255, 200, 150) 0px 4px 15px 0px;
-  }
-  /* Electric Blue Gradient */
-/* Fiery Red Gradient */
-/* Mystic Twilight Gradient */
-/* Retro Gradient */
+.btn:hover .btn-slide-show-text1 {  
+  margin-left: 65px;
+}  
+
+.btn-moving-gradient {  
+  height: 55px;
+  width: 200px;
+  font-size: 18px;
+  font-weight: 600;
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+  border: none;
+  background-size: 300% 100%;
+  border-radius: 50px;
+  /* Add flexbox centering */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* Remove padding since flexbox handles centering */
+  padding: 0;
+}  
+
+.btn-moving-gradient:hover {  
+  transition: 0.5s ease-in-out;
+  background-position: 100% 0px;
+}  
+
+/* Make the anchor tags fill the entire button and center the text - ONLY for gradient buttons */
+.btn-moving-gradient a {
+  text-decoration: none;
+  color: white;
+  /* Make the link fill the entire button */
+  width: 100%;
+  height: 100%;
+  /* Center the text within the link */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* Ensure the link is clickable across the entire button */
+  border-radius: 50px;
+}
+
+/* Keep the original button styles for non-gradient buttons like "Learn More" */
+button {
+  display: inline-block;
+  background-color: blue;
+  color: white;
+  font-size: 18px;
+  font-weight: 600;
+  padding: 24px 32px;
+  min-width: 250px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+  position: relative;
+  z-index: 10;
+}
+
+button a {
+  text-decoration: none;
+  color: white;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+/* Override the generic button styles for gradient buttons specifically */
+.btn-moving-gradient {
+  /* Reset generic button styles */
+  padding: 0 !important;
+  min-width: unset !important;
+  background-color: transparent !important;
+}
+
+.btn-moving-gradient--orange {  
+  background-image: linear-gradient(90deg, rgb(255, 132, 0), rgb(255, 191, 0), rgb(255, 225, 0), rgb(251, 176, 59));  
+  box-shadow: rgb(204, 153, 0) 0px 4px 15px 0px;
+}  
+
+.btn-moving-gradient--pink {
+  background-image: linear-gradient(90deg, rgb(255, 97, 171), rgb(255, 176, 97), rgb(255, 97, 97), rgb(255, 99, 146));
+  box-shadow: rgb(255, 123, 97) 0px 4px 15px 0px;
+}
+
+.btn-moving-gradient--blue {
+  background-image: linear-gradient(90deg, rgb(61, 135, 255), rgb(190, 61, 255), rgb(126, 61, 255), rgb(58, 134, 255));
+  box-shadow: rgb(190, 61, 255) 0px 4px 15px 0px;
+}
+
+.btn-moving-gradient--green {
+  background-image: linear-gradient(90deg, rgb(3, 197, 113), rgb(164, 255, 61), rgb(158, 231, 105), rgb(3, 197, 113));
+  box-shadow: rgb(164, 255, 61) 0px 4px 15px 0px;
+}
+
+.btn-moving-gradient--purple {
+  background-image: linear-gradient(90deg, rgb(91, 91, 230), rgb(121, 121, 255), rgb(171, 121, 255), rgb(91, 91, 230));
+  box-shadow: rgba(121, 121, 255, 0.5) 0px 4px 15px 0px;
+}
+
+.btn-moving-gradient--gold {
+  background-image: linear-gradient(90deg, #6FD670, rgb(13, 158, 71), #38966D, #6FD670);
+  box-shadow: rgba(13, 158, 71) 0px 4px 15px 0px;
+}
+
+.btn-moving-gradient--red {
+  background-image: linear-gradient(90deg, #d95b5b, rgb(188, 67, 113), #c45cae, #d95b5b);
+  box-shadow: rgba(188, 67, 113) 0px 4px 15px 0px;
+}
+
+.btn-moving-gradient--black {
+  background-image: linear-gradient(90deg, #1e1c26, rgb(26, 25, 54), #2d3763, #1e1c26);
+  box-shadow: rgba(26, 25, 54) 0px 4px 15px 0px;
+}
+
+.btn-moving-gradient--teal {
+  background-image: linear-gradient(90deg, rgb(0, 176, 255), rgb(0, 232, 176), rgb(0, 140, 255), rgb(0, 210, 255));
+  box-shadow: rgb(0, 140, 255) 0px 4px 15px 0px;
+}
+
+.btn-moving-gradient--sand {
+  background-image: linear-gradient(90deg, rgb(255, 160, 180), rgb(255, 200, 150), rgb(244, 169, 48), rgb(255, 160, 180));
+  box-shadow: rgba(255, 200, 150) 0px 4px 15px 0px;
+}
+
 .btn-moving-gradient--hot-pink {
   background-image: linear-gradient(90deg, rgb(255, 20, 147), rgb(255, 105, 180), rgb(255, 20, 147), rgb(255, 105, 180));
-
   box-shadow: rgb(255, 20, 147) 0px 4px 15px 0px;
 }
 
-/* Deep Blue Ocean Gradient */
 .btn-moving-gradient--deep-blue {
   background-image: linear-gradient(90deg, rgb(0, 0, 139), rgb(0, 0, 255), rgb(70, 130, 180), rgb(0, 0, 139));
   box-shadow: rgb(0, 0, 255) 0px 4px 15px 0px;
 }
 
-/* Sunset Orange Gradient */
 .btn-moving-gradient--oranger {
   background-image: linear-gradient(90deg, rgb(255, 140, 0), rgb(255, 94, 77), rgb(255, 165, 0), rgb(255, 94, 77));
   box-shadow: rgb(255, 140, 0) 0px 4px 15px 0px;
 }
 
-/* Cosmic Purple Gradient */
 .btn-moving-gradient--purpal {
   background-image: linear-gradient(90deg, rgb(128, 0, 255), rgb(204, 0, 255), rgb(102, 0, 204), rgb(128, 0, 255));
   box-shadow: rgb(128, 0, 255) 0px 4px 15px 0px;
-} 
+}
+
+.btn-moving-gradient--new {
+  background-image: linear-gradient(90deg, rgb(0, 157, 255), rgb(69, 187, 255), rgb(0, 140, 255), rgb(69, 187, 255));
+  box-shadow: rgb(0, 157, 255) 0px 4px 15px 0px;
+}
+
+.btn-moving-gradient--newer {
+  background-image: linear-gradient(90deg, rgb(73, 86, 94), rgb(73, 86, 94), rgb(207, 217, 223), rgb(73, 86, 94));
+  box-shadow: rgb(73, 86, 94) 0px 4px 15px 0px;
+}
+
   .our-models-title {
+    margin-top: 30px;
+    margin-bottom: 50px;
     font-family: "Poppins", sans-serif;
     font-weight: 900;
     font-size: 3em;
     color: black;
     text-transform: uppercase;
     text-align: center;
-    margin-bottom: 20px;
+    position: relative;
+    z-index: 10; /* Ensure title appears above particles */
 }
 .descriptions {
   display: flex;
@@ -588,7 +924,7 @@ button a {
   font-size: 48px;
   font-weight: bold;
   background-image: linear-gradient(to right, #fc7c68, #82bcff);
-  -webkit-background-clip: text;
+  background-clip: text;
   color: transparent;
 }
 

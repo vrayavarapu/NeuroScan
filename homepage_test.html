@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NeuroScan</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background-color: #0a0a0a;
+      font-family: 'Arial', sans-serif;
+    }
+    
+    .container {
+      width: 100%;
+      max-width: 800px;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    svg {
+      width: 100%;
+      height: 150px;
+    }
+    
+    .pulse-line {
+      stroke: #00ff9d;
+      stroke-width: 3;
+      fill: none;
+      filter: drop-shadow(0 0 8px rgba(0, 255, 157, 0.7));
+    }
+    
+    .pulse-marker {
+      fill: #00ff9d;
+      filter: drop-shadow(0 0 8px rgba(0, 255, 157, 0.7));
+    }
+    
+    .grid {
+      stroke: rgba(0, 255, 157, 0.15);
+      stroke-width: 1;
+    }
+
+    #titleContainer {
+      opacity: 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <svg viewBox="0 0 1000 150" xmlns="http://www.w3.org/2000/svg">
+      <!-- Background Grid -->
+      <g class="grid">
+        <path d="M0,25 H1000 M0,50 H1000 M0,75 H1000 M0,100 H1000 M0,125 H1000" />
+        <path d="M100,0 V150 M200,0 V150 M300,0 V150 M400,0 V150 M500,0 V150 M600,0 V150 M700,0 V150 M800,0 V150 M900,0 V150" />
+      </g>
+      
+      <!-- Pulse Path -->
+      <path id="pulsePath" class="pulse-line" d="M0,75 L0,75"></path>
+      
+      <!-- Moving Marker -->
+      <circle id="pulseMarker" class="pulse-marker" cx="0" cy="75" r="4"></circle>
+
+      <!-- Title Container -->
+      <g id="titleContainer">
+        <!-- This will be populated with the character paths -->
+      </g>
+    </svg>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const pulsePath = document.getElementById('pulsePath');
+      const pulseMarker = document.getElementById('pulseMarker');
+      const titleContainer = document.getElementById('titleContainer');
+      
+      let pathData = "M0,75 ";
+      let currentX = 0;
+      let currentY = 75;
+      let phase = 'pulses';
+      let pulseCount = 0;
+      let title = "NeuroScan";
+      let characterIndex = 0;
+      let letterPaths = [];
+      let drawingLetter = false;
+      let letterProgress = 0;
+      let currentLetterPath = null;
+      
+      // Create letter paths for title - FIXED versions
+      function createLetterPaths() {
+        // Updated letter coordinates
+        const letters = {
+          'N': [
+            [0, 0], [0, -30], [20, 0], [20, -30]
+          ],
+          'e': [
+            [15, 0], [0, 0], [0, -15], [15, -15], [15, -5], [0, -5]
+          ],
+          'u': [
+            [0, -15], [0, 0], [15, 0], [15, -15]
+          ],
+          'r': [
+            [0, -15], [0, 0], [1, -14], [15, -15]
+          ],
+          'o': [
+            [0, -15], [15, -15], [15, 0], [0, 0], [0, -15]
+          ],
+          'S': [
+            [15, -15], [0, -15], [0, -7], [15, -7], [15, 0], [0, 0]
+          ],
+          'c': [
+            [15, -15], [0, -15], [0, 0], [15, 0]
+          ],
+          'a': [
+            [0, -15], [15, -15], [15, 0], [0, 0], [0, -7], [15, -7]
+          ],
+          'n': [
+            [0, 0], [0, -15], [15, 0], [15, -15]
+          ]
+        };
+
+        const startX = 350; // Start position for the title
+        let offsetX = 0;
+        
+        title.split('').forEach((char, index) => {
+          if (letters[char]) {
+            // Determine width based on the letter
+            const letterWidth = char === 'i' || char === 'l' ? 10 : 
+                              char === 'N' ? 35 : 
+                              char === 'S' ? 25 : 20;
+            
+            // Map coordinates to screen positions
+            const points = letters[char].map(([x, y]) => [startX + offsetX + x, 75 + y]);
+            letterPaths.push(points);
+            
+            // Add spacing based on letter width
+            offsetX += letterWidth + 5;
+          } else if (char === ' ') {
+            offsetX += 20; // Space width
+          }
+        });
+      }
+      
+      createLetterPaths();
+      
+      function drawPulse() {
+        // Generate a smooth pulse that moves from left to right
+        const pulseWidth = 100; // Width of a single pulse
+        const maxPulses = 3;
+        
+        if (currentX <= pulseWidth * maxPulses) {
+          // Generate smooth pulse using sine wave
+          const nextX = currentX + 2;
+          let nextY = 75;
+          
+          // Create the EKG-like shape when we're at certain points
+          const pulsePosition = currentX % pulseWidth;
+          
+          if (pulsePosition > 40 && pulsePosition <= 45) {
+            // Quick rise
+            nextY = 75 - 30 * ((pulsePosition - 40) / 5);
+          } else if (pulsePosition > 45 && pulsePosition <= 50) {
+            // Sharp drop
+            nextY = 45 + 50 * ((pulsePosition - 45) / 5);
+          } else if (pulsePosition > 50 && pulsePosition <= 55) {
+            // Small bump back up
+            nextY = 95 - 20 * ((pulsePosition - 50) / 5);
+          } else if (pulsePosition > 55 && pulsePosition <= 60) {
+            // Return to baseline
+            nextY = 75 + ((75 - nextY) * ((pulsePosition - 55) / 5));
+          }
+          
+          pathData += `L${nextX},${nextY} `;
+          pulsePath.setAttribute('d', pathData);
+          
+          // Update marker position
+          pulseMarker.setAttribute('cx', nextX);
+          pulseMarker.setAttribute('cy', nextY);
+          
+          currentX = nextX;
+          currentY = nextY;
+          
+          if (currentX >= pulseWidth * maxPulses && phase === 'pulses') {
+            // Transition to drawing the title
+            setTimeout(() => {
+              phase = 'title';
+              // Clear the old path
+              pulsePath.setAttribute('d', "");
+              pathData = "";
+              currentX = 0;
+              
+              // Make title container visible
+              titleContainer.style.opacity = 1;
+              
+              // Start drawing the first letter
+              drawingLetter = true;
+              currentLetterPath = letterPaths[0];
+              letterProgress = 0;
+              pathData = `M${currentLetterPath[0][0]},${currentLetterPath[0][1]} `;
+            }, 500);
+          }
+        }
+      }
+      
+      function drawTitle() {
+        if (characterIndex < letterPaths.length) {
+          if (!drawingLetter) {
+            // Start a new letter
+            currentLetterPath = letterPaths[characterIndex];
+            letterProgress = 0;
+            drawingLetter = true;
+            pathData = `M${currentLetterPath[0][0]},${currentLetterPath[0][1]} `;
+          }
+          
+          if (letterProgress < currentLetterPath.length - 1) {
+            // Continue drawing current letter
+            letterProgress++;
+            const [nextX, nextY] = currentLetterPath[letterProgress];
+            
+            pathData += `L${nextX},${nextY} `;
+            pulsePath.setAttribute('d', pathData);
+            
+            // Update marker position
+            pulseMarker.setAttribute('cx', nextX);
+            pulseMarker.setAttribute('cy', nextY);
+          } else {
+            // Finished letter, move to next
+            const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
+            path.setAttribute('d', pathData);
+            path.setAttribute('class', 'pulse-line');
+            titleContainer.appendChild(path);
+            
+            characterIndex++;
+            drawingLetter = false;
+            
+            // Clear path for next letter
+            pulsePath.setAttribute('d', "");
+            pathData = "";
+            
+            // Add a small delay between letters for better visibility
+            setTimeout(() => {
+              // This timeout is intentionally left empty to create a pause
+            }, 50);
+          }
+        }
+      }
+      
+      function animate() {
+        if (phase === 'pulses') {
+          drawPulse();
+        } else if (phase === 'title') {
+          drawTitle();
+        }
+        
+        requestAnimationFrame(animate);
+      }
+      
+      // Start the animation
+      animate();
+    });
+  </script>
+</body>
+</html>
